@@ -2,6 +2,7 @@ const contactForm = document.querySelector("#contact-form");
 const valueSection = document.querySelector(".value-section");
 const valueCards = document.querySelectorAll(".value-card");
 const ghostCursor = document.querySelector(".value-section__ghost");
+const aboutSectionContent = document.querySelector(".about-modern__content");
 
 if (contactForm) {
   contactForm.addEventListener("submit", (event) => {
@@ -74,4 +75,20 @@ if (valueSection && ghostCursor && window.matchMedia("(hover: hover) and (pointe
     targetX = event.clientX - bounds.left;
     targetY = event.clientY - bounds.top;
   });
+}
+
+if (aboutSectionContent) {
+  const aboutObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          aboutSectionContent.classList.add("is-visible");
+          aboutObserver.unobserve(aboutSectionContent);
+        }
+      });
+    },
+    { threshold: 0.22, rootMargin: "0px 0px -10% 0px" }
+  );
+
+  aboutObserver.observe(aboutSectionContent);
 }
