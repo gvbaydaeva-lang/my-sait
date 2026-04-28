@@ -24,11 +24,18 @@ html {
 body {
   position: relative;
   margin: 0;
-  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Manrope", sans-serif;
   color: var(--text);
   background: var(--bg);
   line-height: 1.55;
   overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
 }
 
 /* Background adapted from provided radial glow component. */
