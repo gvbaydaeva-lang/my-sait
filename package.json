@@ -1,0 +1,11 @@
+{
+  "name": "gilyana-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Персональный сайт-портфолио Байдаевой Гиляны",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "start": "npx serve . -l 3000",
+    "format": "npx prettier --write \"*.{html,css,js,md,json}\""
+  }
+}
