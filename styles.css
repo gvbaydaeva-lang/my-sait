@@ -510,6 +510,78 @@ h2 {
   box-shadow: 0 8px 18px rgba(217, 70, 239, 0.22);
 }
 
+.examples-section {
+  position: relative;
+}
+
+.examples-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle 420px at 10% 18%, rgba(168, 85, 247, 0.18), transparent 70%),
+    radial-gradient(circle 420px at 92% 72%, rgba(244, 114, 182, 0.16), transparent 70%);
+  z-index: -1;
+}
+
+.examples-section h2 {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.examples-section__subtitle {
+  max-width: 68ch;
+  margin: 0 auto 28px;
+  text-align: center;
+  color: var(--text-soft);
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.example-card {
+  border-radius: var(--radius);
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  padding: 22px;
+  background:
+    linear-gradient(150deg, rgba(18, 24, 42, 0.84), rgba(18, 12, 36, 0.72)),
+    radial-gradient(circle at 90% 10%, rgba(217, 70, 239, 0.14), transparent 45%);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 16px 28px rgba(2, 6, 23, 0.36),
+    0 0 0 1px rgba(244, 114, 182, 0.08) inset;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.example-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(217, 70, 239, 0.48);
+  box-shadow:
+    0 24px 36px rgba(2, 6, 23, 0.45),
+    0 0 24px rgba(217, 70, 239, 0.22);
+}
+
+.example-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.03rem;
+}
+
+.example-card p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.examples-note {
+  margin: 24px auto 0;
+  max-width: 72ch;
+  text-align: center;
+  color: #d7dced;
+}
+
 .card,
 .case,
 .reason,
@@ -701,6 +773,10 @@ h2 {
     grid-template-columns: 1fr 1fr;
   }
 
+  .examples-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .value-section__subtitle {
     margin-bottom: 22px;
   }
@@ -773,6 +849,10 @@ h2 {
   .grid--2,
   .steps,
   .reasons {
+    grid-template-columns: 1fr;
+  }
+
+  .examples-grid {
     grid-template-columns: 1fr;
   }
 
