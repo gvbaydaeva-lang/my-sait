@@ -175,17 +175,17 @@ p {
 }
 
 .hero__text h1 {
-  font-size: clamp(2rem, 4.5vw, 4rem);
-  line-height: 1.05;
+  font-size: clamp(2rem, 3.9vw, 3.45rem);
+  line-height: 1.12;
   letter-spacing: -0.02em;
-  margin-bottom: 18px;
-  max-width: 18ch;
+  margin-bottom: 16px;
+  max-width: 17.5ch;
 }
 
 .hero__subtitle {
   color: var(--text-soft);
-  font-size: clamp(1.03rem, 1.45vw, 1.28rem);
-  max-width: 52ch;
+  font-size: clamp(1.04rem, 1.35vw, 1.18rem);
+  max-width: 50ch;
 }
 
 .hero__actions {
@@ -195,30 +195,42 @@ p {
   margin-top: 34px;
 }
 
+.hero__badge {
+  margin-bottom: 18px;
+}
+
+.hero__accent {
+  background: linear-gradient(92deg, #f472b6 8%, #d946ef 52%, #a78bfa 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 .hero__cta {
-  padding: 14px 24px;
+  padding: 15px 28px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #7c3aed, #4f46e5 48%, #3b82f6);
+  font-size: 1rem;
+  background: linear-gradient(135deg, #f472b6 0%, #d946ef 48%, #8b5cf6 100%);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.12) inset,
-    0 18px 32px rgba(79, 70, 229, 0.34);
+    0 18px 34px rgba(217, 70, 239, 0.35);
 }
 
 .hero__cta:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow:
     0 0 0 1px rgba(255, 255, 255, 0.2) inset,
-    0 22px 40px rgba(124, 58, 237, 0.42);
+    0 22px 42px rgba(236, 72, 153, 0.4);
 }
 
 .hero__visual {
   position: relative;
-  min-height: 460px;
+  min-height: 470px;
   border-radius: 30px;
   border: 1px solid rgba(148, 163, 184, 0.24);
   background:
-    linear-gradient(145deg, rgba(17, 24, 39, 0.82), rgba(15, 23, 42, 0.58)),
-    radial-gradient(circle at 82% 12%, rgba(167, 139, 250, 0.16), transparent 48%);
+    linear-gradient(145deg, rgba(10, 14, 26, 0.9), rgba(16, 10, 30, 0.7)),
+    radial-gradient(circle at 80% 10%, rgba(217, 70, 239, 0.18), transparent 46%);
   overflow: hidden;
   backdrop-filter: blur(8px);
   box-shadow:
@@ -232,20 +244,28 @@ p {
   filter: blur(36px);
 }
 
-.hero__orb--one {
-  width: 240px;
-  height: 240px;
-  top: -54px;
-  right: -26px;
-  background: rgba(217, 70, 239, 0.44);
+.hero__orb--pink {
+  width: 300px;
+  height: 300px;
+  right: -80px;
+  bottom: -90px;
+  background: rgba(244, 114, 182, 0.52);
 }
 
-.hero__orb--two {
-  width: 220px;
-  height: 220px;
-  left: -70px;
-  bottom: -70px;
-  background: rgba(59, 130, 246, 0.4);
+.hero__orb--violet {
+  width: 280px;
+  height: 280px;
+  top: -90px;
+  right: 120px;
+  background: rgba(139, 92, 246, 0.38);
+}
+
+.hero__orb--blue {
+  width: 240px;
+  height: 240px;
+  left: -80px;
+  top: 120px;
+  background: rgba(96, 165, 250, 0.34);
 }
 
 .hero__grid {
@@ -258,46 +278,119 @@ p {
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.95), transparent 90%);
 }
 
-.hero-card {
+.product-panel {
   position: absolute;
-  min-width: 220px;
-  padding: 18px 18px 16px;
-  border-radius: 16px;
-  border: 1px solid rgba(148, 163, 184, 0.32);
-  background: rgba(15, 23, 42, 0.62);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 12px 24px rgba(2, 6, 23, 0.45);
+  inset: 62px 54px 86px 54px;
+  border-radius: 22px;
+  border: 1px solid rgba(168, 85, 247, 0.36);
+  background:
+    linear-gradient(145deg, rgba(30, 24, 53, 0.82), rgba(16, 19, 36, 0.88)),
+    radial-gradient(circle at 72% 18%, rgba(244, 114, 182, 0.2), transparent 44%);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 20px 38px rgba(2, 6, 23, 0.48),
+    0 0 0 1px rgba(244, 114, 182, 0.16) inset;
+  padding: 18px;
 }
 
-.hero-card--top {
-  top: 68px;
-  left: 34px;
+.product-panel__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #cbd5e1;
+  font-size: 0.86rem;
+  margin-bottom: 16px;
 }
 
-.hero-card--bottom {
-  bottom: 52px;
-  right: 32px;
-}
-
-.hero-card__label {
-  margin-bottom: 8px;
-  font-size: 0.76rem;
+.product-panel__header span:last-child {
+  font-size: 0.74rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #cbd5e1;
+  color: #f9a8d4;
 }
 
-.hero-card__value {
-  margin-bottom: 4px;
-  font-size: 1.45rem;
-  font-weight: 700;
-  line-height: 1.1;
-  color: #f8fafc;
+.product-panel__chart {
+  height: 150px;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background:
+    linear-gradient(180deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+    linear-gradient(145deg, rgba(15, 23, 42, 0.82), rgba(30, 27, 75, 0.58));
+  background-size:
+    100% 30px,
+    28px 100%,
+    100% 100%;
+  position: relative;
+  overflow: hidden;
 }
 
-.hero-card span {
+.product-panel__chart::before {
+  content: "";
+  position: absolute;
+  left: 22px;
+  right: 22px;
+  top: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, #a78bfa, #f472b6 55%, #fb7185);
+  box-shadow: 0 0 18px rgba(244, 114, 182, 0.7);
+  transform: rotate(-10deg);
+}
+
+.product-panel__stats {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.product-panel__stats div {
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  padding: 10px 12px;
+  background: rgba(9, 14, 25, 0.62);
+}
+
+.product-panel__stats p {
+  margin: 0 0 4px;
   color: #b8c0d9;
-  font-size: 0.92rem;
+  font-size: 0.82rem;
+}
+
+.product-panel__stats strong {
+  color: #f8fafc;
+  font-size: 1.08rem;
+}
+
+.metric-chip {
+  position: absolute;
+  border-radius: 14px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(10px);
+  padding: 12px 14px;
+  box-shadow: 0 10px 22px rgba(2, 6, 23, 0.44);
+}
+
+.metric-chip p {
+  margin: 0 0 4px;
+  color: #b8c0d9;
+  font-size: 0.78rem;
+}
+
+.metric-chip strong {
+  color: #f8fafc;
+  font-size: 0.96rem;
+}
+
+.metric-chip--one {
+  left: 22px;
+  bottom: 28px;
+}
+
+.metric-chip--two {
+  right: 22px;
+  top: 26px;
 }
 
 .btn {
@@ -540,6 +633,10 @@ h2 {
     min-height: 360px;
   }
 
+  .product-panel {
+    inset: 44px 34px 74px 34px;
+  }
+
   .grid--3,
   .reasons {
     grid-template-columns: 1fr 1fr;
@@ -568,22 +665,30 @@ h2 {
   }
 
   .hero__visual {
-    min-height: 300px;
+    min-height: 290px;
   }
 
-  .hero-card {
-    min-width: 185px;
+  .product-panel {
+    inset: 40px 18px 70px 18px;
     padding: 14px;
   }
 
-  .hero-card--top {
-    top: 42px;
-    left: 16px;
+  .product-panel__chart {
+    height: 120px;
   }
 
-  .hero-card--bottom {
-    right: 16px;
-    bottom: 32px;
+  .metric-chip {
+    padding: 10px 12px;
+  }
+
+  .metric-chip--one {
+    left: 12px;
+    bottom: 14px;
+  }
+
+  .metric-chip--two {
+    right: 12px;
+    top: 12px;
   }
 
   .topbar__content,
