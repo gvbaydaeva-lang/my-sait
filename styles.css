@@ -452,6 +452,7 @@ h2 {
 }
 
 .value-section {
+  position: relative;
   text-align: center;
 }
 
@@ -471,6 +472,8 @@ h2 {
 }
 
 .value-cards {
+  position: relative;
+  z-index: 2;
   align-items: stretch;
 }
 
@@ -485,6 +488,18 @@ h2 {
     0 18px 30px rgba(2, 6, 23, 0.38),
     0 0 0 1px rgba(244, 114, 182, 0.1) inset;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  opacity: 0;
+  transform: translateY(16px);
+}
+
+.value-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .value-card:hover {
@@ -508,6 +523,26 @@ h2 {
   background: rgba(15, 23, 42, 0.74);
   border: 1px solid rgba(244, 114, 182, 0.35);
   box-shadow: 0 8px 18px rgba(217, 70, 239, 0.22);
+}
+
+.value-section__ghost {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 230px;
+  height: 230px;
+  border-radius: 999px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  transform: translate3d(-999px, -999px, 0);
+  will-change: transform, opacity;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(244, 114, 182, 0.28), transparent 52%),
+    radial-gradient(circle at 70% 55%, rgba(139, 92, 246, 0.24), transparent 58%),
+    radial-gradient(circle at 50% 75%, rgba(96, 165, 250, 0.22), transparent 62%);
+  filter: blur(20px);
+  transition: opacity 0.35s ease;
 }
 
 .examples-section {
@@ -860,6 +895,23 @@ h2 {
     font-size: 1rem;
   }
 
+  .value-section::before {
+    content: "";
+    position: absolute;
+    inset: 44px -10px 10px;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle 220px at 22% 28%, rgba(217, 70, 239, 0.22), transparent 72%),
+      radial-gradient(circle 240px at 78% 70%, rgba(96, 165, 250, 0.2), transparent 72%);
+    filter: blur(22px);
+    animation: value-mobile-glow 16s ease-in-out infinite alternate;
+  }
+
+  .value-section__ghost {
+    display: none;
+  }
+
   .floating-cta {
     left: 12px;
     right: 12px;
@@ -868,5 +920,38 @@ h2 {
 
   .contact-form .btn {
     width: 100%;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .value-section__ghost {
+    display: none;
+  }
+}
+
+@keyframes value-mobile-glow {
+  0% {
+    transform: translate3d(-10px, -6px, 0) scale(1);
+    opacity: 0.72;
+  }
+  50% {
+    transform: translate3d(6px, 8px, 0) scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(-4px, 4px, 0) scale(1.02);
+    opacity: 0.78;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .value-card,
+  .value-card.is-visible,
+  .value-card:hover,
+  .value-section::before {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }
