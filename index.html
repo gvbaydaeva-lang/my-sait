@@ -257,47 +257,63 @@
 
     <section class="section contacts" id="contacts">
       <div class="container contacts__content">
-        <h2>Контакты</h2>
+        <h2>Обсудим ваш проект</h2>
         <p>
-          Готова обсудить ваш проект и предложить решение под задачу бизнеса.
+          Напишите в удобный мессенджер — разберём задачу и предложу решение
         </p>
-        <form class="contact-form" id="contact-form">
-          <label>
-            Имя
-            <input type="text" name="name" placeholder="Ваше имя" required />
-          </label>
-          <label>
-            Контакт (Telegram или Email)
-            <input
-              type="text"
-              name="contact"
-              placeholder="@username или email@example.com"
-              required
-            />
-          </label>
-          <label>
-            Коротко о задаче
-            <textarea
-              name="task"
-              rows="4"
-              placeholder="Например: нужен лендинг и интеграция с CRM"
-              required
-            ></textarea>
-          </label>
-          <button class="btn btn--primary" type="submit">Отправить заявку</button>
-          <p class="contact-form__hint">
-            После нажатия откроется ваш почтовый клиент с подготовленным письмом.
-          </p>
-        </form>
-        <div class="contacts__links">
-          <a href="https://t.me/your_username" target="_blank" rel="noopener"
-            >Telegram</a
+        <div class="contacts__messengers">
+          <a
+            class="messenger-btn messenger-btn--primary"
+            href="https://t.me/gilyana_08"
+            target="_blank"
+            rel="noopener"
           >
-          <a href="mailto:you@example.com">Email</a>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M21.5 4.5a1 1 0 0 0-1.03-.13L3.2 11.5a1 1 0 0 0 .08 1.87l4.72 1.67 1.66 4.7a1 1 0 0 0 1.85.1l7.2-17.3a1 1 0 0 0-.2-1.04ZM9.8 14.3l-.67 2-1.07-3-3-1.07 12.9-5.38-8.16 7.44Z"
+              />
+            </svg>
+            <span>Telegram</span>
+          </a>
+          <a
+            class="messenger-btn"
+            href="https://wa.me/79859390988?text=Здравствуйте!%20Хочу%20узнать%20подробнее"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M19.1 4.9A9.9 9.9 0 0 0 3.5 17.2L2 22l4.95-1.44A9.9 9.9 0 1 0 19.1 4.9Zm-7.2 15.3c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-2.9.85.88-2.8-.2-.3a8.2 8.2 0 1 1 6.6 3.6Zm4.5-5.6c-.25-.12-1.48-.73-1.7-.81-.23-.08-.39-.12-.55.12-.17.25-.63.81-.77.98-.14.17-.28.19-.53.06-.25-.12-1.05-.39-2-1.25-.74-.66-1.24-1.47-1.38-1.72-.14-.24-.01-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.75-1.82-.2-.48-.4-.42-.55-.43h-.47c-.17 0-.43.06-.65.31-.22.24-.86.84-.86 2.04 0 1.2.88 2.37 1 2.53.12.17 1.72 2.62 4.16 3.67.58.25 1.03.4 1.38.5.58.19 1.1.16 1.52.1.46-.07 1.48-.6 1.69-1.18.2-.58.2-1.07.14-1.18-.05-.1-.2-.16-.44-.28Z"
+              />
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+          <a
+            class="messenger-btn"
+            href="https://www.instagram.com/gilyana_pro?igsh=MWJtdWc0enlzb2F1Mw%3D%3D&utm_source=qr"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm10.1 1.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z"
+              />
+            </svg>
+            <span>Instagram</span>
+          </a>
+          <a
+            class="messenger-btn"
+            href="https://max.ru/u/f9LHodD0cOKqn3E3_uMmRRlRbF9OmFoEm6E1oABKsG7NoWCjABLeNpO6FIc"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 5h3.2L12 12.2 16.8 5H20l-6.4 9.6L20 19h-3.2L12 11.8 7.2 19H4l6.4-9.4L4 5Z" />
+            </svg>
+            <span>Max</span>
+          </a>
         </div>
-        <a class="btn btn--primary" href="https://t.me/your_username" target="_blank" rel="noopener"
-          >Написать в Telegram</a
-        >
+        <p class="contacts__note">Отвечаю лично</p>
       </div>
     </section>
 
