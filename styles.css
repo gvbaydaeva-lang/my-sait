@@ -1,12 +1,12 @@
 :root {
-  --bg: #06070f;
+  --bg: #0b0a16;
   --surface: rgba(16, 20, 31, 0.72);
   --surface-muted: rgba(14, 18, 28, 0.76);
   --text: #eef2ff;
   --text-soft: #b8c0d9;
   --line: rgba(148, 163, 184, 0.28);
-  --accent: #60a5fa;
-  --accent-soft: rgba(96, 165, 250, 0.16);
+  --accent: #a855f7;
+  --accent-soft: rgba(168, 85, 247, 0.16);
   --radius: 18px;
   --shadow: 0 10px 34px rgba(0, 0, 0, 0.38);
 }
@@ -43,16 +43,16 @@ body::after {
 
 body::before {
   background:
-    radial-gradient(circle 820px at 12% -8%, rgba(244, 114, 182, 0.18), transparent 62%),
-    radial-gradient(circle 940px at 100% 8%, rgba(132, 96, 255, 0.2), transparent 64%),
-    radial-gradient(circle 660px at 62% 88%, rgba(96, 165, 250, 0.18), transparent 68%);
+    radial-gradient(circle 860px at 12% -8%, rgba(244, 114, 182, 0.24), transparent 64%),
+    radial-gradient(circle 960px at 100% 8%, rgba(147, 51, 234, 0.24), transparent 65%),
+    radial-gradient(circle 720px at 62% 88%, rgba(99, 102, 241, 0.16), transparent 69%);
 }
 
 body::after {
   z-index: -1;
   background:
-    linear-gradient(130deg, #05060c 0%, #0a0c18 46%, #090b16 100%),
-    linear-gradient(180deg, rgba(15, 23, 42, 0.7), rgba(2, 6, 23, 0.92));
+    linear-gradient(132deg, #090814 0%, #120a22 48%, #0c1124 100%),
+    linear-gradient(180deg, rgba(88, 28, 135, 0.12), rgba(2, 6, 23, 0.9));
 }
 
 img {
@@ -128,11 +128,26 @@ p {
 }
 
 .section {
+  position: relative;
+  isolation: isolate;
   padding: 72px 0;
 }
 
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle 460px at 20% 22%, rgba(168, 85, 247, 0.08), transparent 72%),
+    radial-gradient(circle 420px at 82% 76%, rgba(244, 114, 182, 0.08), transparent 74%);
+}
+
 .section--alt {
-  background: var(--surface-muted);
+  background:
+    linear-gradient(145deg, rgba(19, 14, 36, 0.44), rgba(10, 18, 36, 0.34)),
+    var(--surface-muted);
   backdrop-filter: blur(1px);
 }
 
@@ -408,12 +423,17 @@ p {
 
 .btn--primary {
   color: #fff;
-  background: var(--accent);
+  background: linear-gradient(135deg, #a855f7 0%, #d946ef 58%, #f472b6 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.12) inset,
+    0 14px 26px rgba(217, 70, 239, 0.28);
 }
 
 .btn--primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(31, 74, 255, 0.28);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.18) inset,
+    0 18px 34px rgba(217, 70, 239, 0.38);
 }
 
 .btn--ghost {
@@ -1006,8 +1026,42 @@ h2 {
 .messenger-btn svg {
   width: 34px;
   height: 34px;
-  fill: currentColor;
-  filter: drop-shadow(0 0 10px rgba(217, 70, 239, 0.3));
+}
+
+.messenger-icon--telegram {
+  fill: #38bdf8;
+  filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.45));
+}
+
+.messenger-btn--telegram:hover .messenger-icon--telegram {
+  filter: drop-shadow(0 0 14px rgba(56, 189, 248, 0.62));
+}
+
+.messenger-icon--whatsapp {
+  fill: #22c55e;
+  filter: drop-shadow(0 0 10px rgba(34, 197, 94, 0.45));
+}
+
+.messenger-btn--whatsapp:hover .messenger-icon--whatsapp {
+  filter: drop-shadow(0 0 14px rgba(34, 197, 94, 0.62));
+}
+
+.messenger-icon--instagram path {
+  fill: url(#instagramGradient);
+  filter: drop-shadow(0 0 12px rgba(236, 72, 153, 0.45));
+}
+
+.messenger-btn--instagram:hover .messenger-icon--instagram path {
+  filter: drop-shadow(0 0 15px rgba(217, 70, 239, 0.62));
+}
+
+.messenger-icon--max {
+  fill: #a78bfa;
+  filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.45));
+}
+
+.messenger-btn--max:hover .messenger-icon--max {
+  filter: drop-shadow(0 0 14px rgba(167, 139, 250, 0.62));
 }
 
 .messenger-btn__label {
