@@ -1,14 +1,14 @@
 :root {
-  --bg: #f8fafc;
-  --surface: #ffffff;
-  --surface-muted: #f5f7fb;
-  --text: #16181d;
-  --text-soft: #5b6270;
-  --line: #e5e8ef;
-  --accent: #2e49c8;
-  --accent-soft: #e9edff;
+  --bg: #000000;
+  --surface: rgba(16, 20, 31, 0.72);
+  --surface-muted: rgba(14, 18, 28, 0.76);
+  --text: #eef2ff;
+  --text-soft: #b8c0d9;
+  --line: rgba(148, 163, 184, 0.28);
+  --accent: #60a5fa;
+  --accent-soft: rgba(96, 165, 250, 0.16);
   --radius: 18px;
-  --shadow: 0 10px 30px rgba(14, 20, 35, 0.06);
+  --shadow: 0 10px 34px rgba(0, 0, 0, 0.38);
 }
 
 *,
@@ -31,7 +31,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Soft radial glows adapted for a light premium look. */
+/* Background adapted from provided radial glow component. */
 body::before,
 body::after {
   content: "";
@@ -43,15 +43,13 @@ body::after {
 
 body::before {
   background:
-    radial-gradient(circle 760px at 8% -12%, rgba(46, 73, 200, 0.2), transparent 68%),
-    radial-gradient(circle 700px at 92% 10%, rgba(122, 155, 255, 0.22), transparent 66%);
+    radial-gradient(circle 700px at 50% 200px, rgba(96, 165, 250, 0.25), transparent),
+    radial-gradient(circle 400px at 70% 500px, rgba(244, 114, 182, 0.3), transparent);
 }
 
 body::after {
   z-index: -1;
-  background:
-    radial-gradient(circle 860px at 50% 115%, rgba(165, 183, 255, 0.25), transparent 65%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.9));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.96), rgba(2, 6, 23, 0.98));
 }
 
 img {
@@ -82,7 +80,7 @@ p {
   top: 12px;
   z-index: 1000;
   padding: 8px 12px;
-  background: #fff;
+  background: #0b1220;
   border: 1px solid var(--line);
   border-radius: 10px;
 }
@@ -92,8 +90,8 @@ p {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(8px);
-  background: rgba(255, 255, 255, 0.72);
-  border-bottom: 1px solid rgba(229, 232, 239, 0.8);
+  background: rgba(8, 12, 22, 0.55);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
 }
 
 .topbar__content {
@@ -131,7 +129,7 @@ p {
 }
 
 .section--alt {
-  background: rgba(255, 255, 255, 0.64);
+  background: var(--surface-muted);
   backdrop-filter: blur(1px);
 }
 
@@ -158,9 +156,7 @@ p {
   height: 480px;
   pointer-events: none;
   z-index: -1;
-  background:
-    radial-gradient(circle 420px at 20% 35%, rgba(71, 108, 255, 0.24), transparent 70%),
-    radial-gradient(circle 360px at 80% 25%, rgba(155, 180, 255, 0.2), transparent 72%);
+  background: none;
 }
 
 .hero__content {
@@ -224,12 +220,12 @@ p {
 .btn--ghost {
   color: var(--text);
   border-color: var(--line);
-  background: #fff;
+  background: rgba(9, 14, 25, 0.7);
 }
 
 .btn--ghost:hover {
-  border-color: #cfd5e3;
-  background: #fafbff;
+  border-color: rgba(148, 163, 184, 0.45);
+  background: rgba(14, 22, 38, 0.85);
 }
 
 .btn--small {
@@ -260,7 +256,7 @@ h2 {
 .case,
 .reason,
 .steps li {
-  background: rgba(255, 255, 255, 0.92);
+  background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 22px;
@@ -332,7 +328,7 @@ h2 {
 }
 
 .contacts {
-  background: rgba(241, 245, 255, 0.65);
+  background: rgba(8, 12, 20, 0.72);
 }
 
 .contacts__content {
@@ -383,9 +379,9 @@ h2 {
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  border: 1px solid #d8deeb;
+  border: 1px solid rgba(148, 163, 184, 0.35);
   border-radius: 12px;
-  background: #fff;
+  background: rgba(8, 12, 22, 0.8);
   color: var(--text);
   padding: 12px 14px;
   font: inherit;
@@ -393,8 +389,8 @@ h2 {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  outline: 2px solid rgba(46, 73, 200, 0.2);
-  border-color: #b5c3ef;
+  outline: 2px solid rgba(96, 165, 250, 0.26);
+  border-color: rgba(96, 165, 250, 0.7);
 }
 
 .contact-form .btn {
@@ -438,8 +434,8 @@ h2 {
 @media (max-width: 720px) {
   body::before {
     background:
-      radial-gradient(circle 530px at 20% -5%, rgba(46, 73, 200, 0.2), transparent 70%),
-      radial-gradient(circle 480px at 80% 10%, rgba(122, 155, 255, 0.18), transparent 68%);
+      radial-gradient(circle 560px at 50% 180px, rgba(96, 165, 250, 0.24), transparent),
+      radial-gradient(circle 330px at 70% 430px, rgba(244, 114, 182, 0.26), transparent);
   }
 
   .section {
