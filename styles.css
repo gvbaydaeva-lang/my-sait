@@ -547,17 +547,32 @@ h2 {
 
 .examples-section {
   position: relative;
+  overflow: hidden;
 }
 
 .examples-section::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: -12% -10%;
   pointer-events: none;
   background:
-    radial-gradient(circle 420px at 10% 18%, rgba(168, 85, 247, 0.18), transparent 70%),
-    radial-gradient(circle 420px at 92% 72%, rgba(244, 114, 182, 0.16), transparent 70%);
+    radial-gradient(circle 560px at 8% 26%, rgba(168, 85, 247, 0.2), transparent 70%),
+    radial-gradient(circle 640px at 88% 74%, rgba(244, 114, 182, 0.2), transparent 72%),
+    radial-gradient(circle 500px at 55% 12%, rgba(96, 165, 250, 0.14), transparent 72%);
+  filter: blur(8px);
+  animation: examples-bg-shift 18s ease-in-out infinite alternate;
   z-index: -1;
+}
+
+.examples-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.02), transparent 34%),
+    radial-gradient(circle 460px at 72% 34%, rgba(217, 70, 239, 0.1), transparent 72%);
 }
 
 .examples-section h2 {
@@ -575,39 +590,144 @@ h2 {
 .examples-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  gap: 20px;
+  align-items: stretch;
 }
 
 .example-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
   border-radius: var(--radius);
-  border: 1px solid rgba(168, 85, 247, 0.28);
-  padding: 22px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  padding: 20px;
   background:
-    linear-gradient(150deg, rgba(18, 24, 42, 0.84), rgba(18, 12, 36, 0.72)),
-    radial-gradient(circle at 90% 10%, rgba(217, 70, 239, 0.14), transparent 45%);
+    linear-gradient(152deg, rgba(14, 18, 33, 0.84), rgba(24, 14, 42, 0.72)),
+    radial-gradient(circle at 85% 12%, rgba(217, 70, 239, 0.18), transparent 48%);
   backdrop-filter: blur(10px);
   box-shadow:
-    0 16px 28px rgba(2, 6, 23, 0.36),
-    0 0 0 1px rgba(244, 114, 182, 0.08) inset;
-  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    0 20px 30px rgba(2, 6, 23, 0.38),
+    0 0 0 1px rgba(244, 114, 182, 0.09) inset;
+  transition:
+    transform 0.32s ease,
+    box-shadow 0.32s ease,
+    border-color 0.32s ease,
+    background 0.32s ease;
+}
+
+.example-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    145deg,
+    rgba(244, 114, 182, 0.5),
+    rgba(168, 85, 247, 0.34),
+    rgba(96, 165, 250, 0.34)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.example-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 14px 48px 14px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(148, 163, 184, 0.44), transparent);
+  opacity: 0.7;
 }
 
 .example-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(217, 70, 239, 0.48);
+  transform: translateY(-6px);
   box-shadow:
-    0 24px 36px rgba(2, 6, 23, 0.45),
-    0 0 24px rgba(217, 70, 239, 0.22);
+    0 28px 40px rgba(2, 6, 23, 0.48),
+    0 0 28px rgba(217, 70, 239, 0.26);
+  background:
+    linear-gradient(152deg, rgba(18, 22, 40, 0.9), rgba(30, 16, 50, 0.8)),
+    radial-gradient(circle at 85% 12%, rgba(244, 114, 182, 0.24), transparent 48%);
 }
 
 .example-card h3 {
-  margin-bottom: 10px;
+  margin: 0;
   font-size: 1.03rem;
+  max-width: 24ch;
 }
 
 .example-card p {
   margin: 0;
   color: var(--text-soft);
+}
+
+.example-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.example-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #f5d0fe;
+  border: 1px solid rgba(244, 114, 182, 0.35);
+  background: rgba(17, 24, 39, 0.6);
+}
+
+.example-card__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fbcfe8;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  background:
+    radial-gradient(circle at 30% 25%, rgba(244, 114, 182, 0.35), transparent 62%),
+    rgba(15, 23, 42, 0.72);
+  box-shadow: 0 0 16px rgba(217, 70, 239, 0.28);
+}
+
+.example-card__cta {
+  margin-top: auto;
+  width: fit-content;
+  font-weight: 600;
+  text-decoration: none;
+  color: rgba(224, 231, 255, 0.78);
+  border-bottom: 1px solid transparent;
+  transition: color 0.28s ease, border-color 0.28s ease, text-shadow 0.28s ease;
+}
+
+.example-card:hover .example-card__cta {
+  color: #f5d0fe;
+  border-color: rgba(244, 114, 182, 0.5);
+  text-shadow: 0 0 12px rgba(244, 114, 182, 0.35);
+}
+
+.example-card--featured {
+  grid-column: span 2;
+  background:
+    linear-gradient(146deg, rgba(20, 18, 42, 0.86), rgba(34, 15, 54, 0.8)),
+    radial-gradient(circle at 82% 24%, rgba(244, 114, 182, 0.28), transparent 46%);
+  box-shadow:
+    0 22px 36px rgba(2, 6, 23, 0.44),
+    0 0 30px rgba(168, 85, 247, 0.18);
 }
 
 .examples-note {
@@ -812,6 +932,10 @@ h2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .example-card--featured {
+    grid-column: auto;
+  }
+
   .value-section__subtitle {
     margin-bottom: 22px;
   }
@@ -891,6 +1015,15 @@ h2 {
     grid-template-columns: 1fr;
   }
 
+  .example-card {
+    gap: 10px;
+    padding: 18px;
+  }
+
+  .example-card__cta {
+    padding: 4px 0;
+  }
+
   .value-section__subtitle {
     font-size: 1rem;
   }
@@ -944,11 +1077,30 @@ h2 {
   }
 }
 
+@keyframes examples-bg-shift {
+  0% {
+    transform: translate3d(-1.2%, -1%, 0) scale(1);
+    opacity: 0.84;
+  }
+  50% {
+    transform: translate3d(1.6%, 1.2%, 0) scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-0.6%, 0.8%, 0) scale(1.01);
+    opacity: 0.9;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .value-card,
   .value-card.is-visible,
   .value-card:hover,
-  .value-section::before {
+  .value-section::before,
+  .examples-section::before,
+  .example-card,
+  .example-card:hover,
+  .example-card__cta {
     animation: none !important;
     transition: none !important;
     transform: none !important;
