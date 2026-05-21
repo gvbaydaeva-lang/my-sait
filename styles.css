@@ -204,6 +204,14 @@ p {
   max-width: 17.5ch;
 }
 
+.hero__title-desktop {
+  display: block;
+}
+
+.hero__title-mobile {
+  display: none;
+}
+
 .hero__subtitle {
   color: var(--text-soft);
   font-size: clamp(1.04rem, 1.35vw, 1.18rem);
@@ -1164,9 +1172,35 @@ h2 {
     padding: 56px 0;
   }
 
+  .topbar {
+    position: static;
+    top: auto;
+  }
+
+  .topbar__links .btn.btn--primary {
+    display: none;
+  }
+
   .hero {
     padding-top: 28px;
     text-align: center;
+  }
+
+  .hero__title-desktop {
+    display: none;
+  }
+
+  .hero__title-mobile {
+    display: block;
+  }
+
+  .hero__text h1 {
+    font-size: clamp(1.38rem, 5.4vw, 1.68rem);
+    line-height: 1.22;
+    letter-spacing: -0.02em;
+    max-width: 16.5ch;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero__actions {
