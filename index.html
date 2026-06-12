@@ -56,27 +56,26 @@
 
     <!-- ═══ HERO ═══ -->
     <header class="hero" id="top">
+      <div id="hero-bg-canvas" class="hero__bg-wrapper"></div>
       <div class="container hero__layout">
         <div class="hero__text">
           <p class="eyebrow">AI-разработка · Автоматизация · Цифровые продукты</p>
-          <h1>
-            <span class="hero__line">Цифровые решения,</span>
-            <span class="hero__line">которые работают</span>
-            <span class="hero__line hero__line--accent">вместо&nbsp;вас</span>
-          </h1>
-          <p class="hero__sub">Создаю сайты, веб-приложения, Telegram-боты и AI-автоматизацию — чтобы ваш бизнес получал клиентов и работал без лишней рутины</p>
-          <div class="hero__actions">
-            <a class="btn btn--dark" href="#contacts">Обсудить задачу</a>
-            <a class="btn btn--outline" href="#services">Что я делаю</a>
-          </div>
+        <h1>
+          <span class="hero__line">Цифровые решения, которые работают <span class="hero__line--accent">вместо вас</span></span>
+        </h1>
+        <p class="hero__sub">Разработка веб-систем, CRM и ИИ-автоматизации, которые освобождают ваше время для жизни.</p>
+        <div class="hero__actions">
+          <a class="btn btn--dark hero__cta" href="#contacts">Обсудить задачу</a>
+          <a class="btn btn--outline" href="#services">Что я делаю</a>
         </div>
+      </div>
 
-        <!-- OS-window: hero dashboard -->
-        <div class="os-window hero__window" aria-hidden="true">
-          <div class="os-window__chrome">
-            <span class="os-dot os-dot--red"></span>
-            <span class="os-dot os-dot--yellow"></span>
-            <span class="os-dot os-dot--green"></span>
+      <!-- OS-window: hero dashboard -->
+      <div class="os-window hero__window" aria-hidden="true">
+          <div class="os-window__chrome" aria-label="Mac window controls">
+            <span class="os-dot os-dot--red" aria-hidden="true"></span>
+            <span class="os-dot os-dot--yellow" aria-hidden="true"></span>
+            <span class="os-dot os-dot--green" aria-hidden="true"></span>
             <span class="os-window__title">pipeline · live</span>
             <span class="os-live"><span class="live-dot"></span>running</span>
           </div>
@@ -85,17 +84,11 @@
               <span class="mono muted">// заявки / автоматизация</span>
               <span class="status-badge">active</span>
             </div>
-            <div class="chart-area">
-              <svg class="chart-svg" viewBox="0 0 280 90" preserveAspectRatio="none">
-                <defs>
-                  <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#1C1917" stop-opacity="0.18"/>
-                    <stop offset="100%" stop-color="#1C1917" stop-opacity="0"/>
-                  </linearGradient>
-                </defs>
-                <path d="M0,72 C25,65 42,70 60,54 C78,38 95,58 118,42 C141,26 158,46 182,30 C206,14 230,24 280,10" stroke="#1C1917" stroke-width="2" fill="none" stroke-linecap="round"/>
-                <path d="M0,72 C25,65 42,70 60,54 C78,38 95,58 118,42 C141,26 158,46 182,30 C206,14 230,24 280,10 L280,90 L0,90 Z" fill="url(#chartFill)"/>
-              </svg>
+            <div class="chart-area dashboard-panel">
+              <div class="dashboard-message is-visible">
+                <p class="dashboard-phrase">Создаю продающие сайты и веб-приложения</p>
+                <span class="dashboard-status">🌐 Запущено</span>
+              </div>
             </div>
             <div class="dashboard-stats">
               <div class="stat-cell">
@@ -104,11 +97,11 @@
               </div>
               <div class="stat-cell">
                 <span class="mono muted">рост / мес</span>
-                <strong>+23%</strong>
+                <strong class="counter" data-target="23" data-prefix="+" data-suffix="%">0%</strong>
               </div>
               <div class="stat-cell">
                 <span class="mono muted">ручной труд</span>
-                <strong>−80%</strong>
+                <strong class="counter" data-target="80" data-prefix="-" data-suffix="%">0%</strong>
               </div>
             </div>
             <div class="terminal-line">
@@ -172,6 +165,9 @@
             </div>
           </div>
         </div>
+
+      </div>
+        </div>
       </section>
 
       <!-- ═══ SERVICES ═══ -->
@@ -181,6 +177,11 @@
             <p class="eyebrow">Что я создаю</p>
             <h2>Конкретные решения под задачи бизнеса</h2>
             <p class="section-sub">Не шаблоны — каждый проект под вашу задачу. Быстро, понятно, с поддержкой после запуска</p>
+          </div>
+              <div class="modal-card">
+                <div class="modal-content" id="modal-content"></div>
+              </div>
+            </div>
           </div>
           <div class="services-grid">
 
@@ -597,6 +598,7 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js" defer></script>
+    <script src="script.js" defer></script>
   </body>
 </html>
