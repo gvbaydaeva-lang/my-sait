@@ -3,334 +3,269 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Байдаева Гиляна — разработчик и digital-специалист</title>
-    <meta
-      name="description"
-      content="Сайты, боты, CRM и автоматизация для предпринимателей и экспертов. Помогаю получать клиентов и выстраивать процессы."
-    />
-    <meta property="og:title" content="Байдаева Гиляна — разработчик и digital-специалист" />
-    <meta
-      property="og:description"
-      content="Сайты, боты, CRM и автоматизация для бизнеса. Фокус на заявки, продажи и автоматизацию процессов."
-    />
+    <title>Байдаева Гиляна — AI-разработчик и автоматизация бизнеса</title>
+    <meta name="description" content="Сайты, боты, AI-агенты и автоматизация для предпринимателей. Помогаю убрать рутину и масштабировать бизнес с помощью искусственного интеллекта." />
+    <meta property="og:title" content="Байдаева Гиляна — AI-разработчик и автоматизация бизнеса" />
+    <meta property="og:description" content="Сайты, боты, AI-агенты и автоматизация для бизнеса. Фокус на заявки, продажи и автоматизацию процессов с помощью ИИ." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="about-portrait.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Перейти к контенту</a>
-    <nav class="topbar">
-      <div class="container topbar__content">
-        <a class="topbar__brand" href="#top">Байдаева Гиляна</a>
+
+    <nav class="topbar" role="navigation" aria-label="Основная навигация">
+      <div class="container topbar__inner">
+        <a class="topbar__brand" href="#top">Гиляна Байдаева</a>
         <div class="topbar__links">
           <a href="#services">Услуги</a>
-          <a href="#projects">Мои проекты</a>
+          <a href="#projects">Проекты</a>
           <a href="#about">Обо мне</a>
-          <a class="btn btn--small btn--primary" href="#contacts">Обсудить проект</a>
+          <a class="btn btn--sm btn--dark" href="#contacts">Обсудить проект</a>
         </div>
       </div>
     </nav>
+
     <header class="hero" id="top">
-      <div class="container hero__content">
-        <div class="hero__text">
-          <p class="badge hero__badge">Автоматизация для бизнеса</p>
-          <h1>
-            <span class="hero__title-desktop">
-              Автоматизирую бизнес-процессы<br />
-              и создаю <span class="hero__accent">цифровые решения</span>
-            </span>
-            <span class="hero__title-mobile">
-              <span class="hero__line">Автоматизирую бизнес-</span>
-              <span class="hero__line">процессы и создаю</span>
-              <span class="hero__line"
-                ><span class="hero__accent">цифровые решения</span></span
-              >
-            </span>
+      <div class="container hero__layout">
+        <div class="hero__copy">
+          <p class="mono-tag">AI-разработка · Автоматизация · Vibe-кодинг</p>
+          <h1 class="hero__h1">
+            <span class="hero__h1-desktop">Автоматизирую бизнес<br />с помощью <em>искусственного<br />интеллекта</em></span>
+            <span class="hero__h1-mobile">Автоматизирую<br />бизнес<br />с помощью <em>ИИ</em></span>
           </h1>
-          <p class="hero__subtitle">
-            Сайты, боты, CRM и сервисы, которые экономят время, снижают расходы
-            и увеличивают прибыль
-          </p>
+          <p class="hero__sub">Сайты, боты, AI-агенты и интеграции — чтобы тратить меньше времени на рутину и больше зарабатывать</p>
+          <div class="hero__actions">
+            <a class="btn btn--dark btn--lg" href="#contacts">Обсудить проект</a>
+            <a class="btn btn--outline btn--lg" href="#projects">Смотреть работы</a>
+          </div>
         </div>
+
         <div class="hero__visual" aria-hidden="true">
-          <div class="hero__orb hero__orb--pink"></div>
-          <div class="hero__orb hero__orb--violet"></div>
-          <div class="hero__orb hero__orb--blue"></div>
-          <div class="hero__grid"></div>
-          <article class="product-panel">
-            <div class="product-panel__header">
-              <span>Pipeline</span>
-              <span>Live</span>
+          <div class="os-window">
+            <div class="os-window__chrome">
+              <span class="os-dot os-dot--red"></span>
+              <span class="os-dot os-dot--yellow"></span>
+              <span class="os-dot os-dot--green"></span>
+              <span class="os-window__title">pipeline.dashboard</span>
             </div>
-            <div class="product-panel__chart"></div>
-            <div class="product-panel__stats">
-              <div>
-                <p>Заявки</p>
-                <strong>1482</strong>
+            <div class="os-window__body">
+              <div class="dash-row dash-row--head">
+                <span class="mono-tag">Live · Обновлено сейчас</span>
+                <span class="dash-status"><span class="dash-pulse"></span>Active</span>
               </div>
-              <div>
-                <p>Рост</p>
-                <strong>+23%</strong>
+              <div class="dash-chart" aria-hidden="true">
+                <svg viewBox="0 0 320 90" preserveAspectRatio="none" class="dash-svg">
+                  <defs>
+                    <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#C4A882" stop-opacity="0.25"/>
+                      <stop offset="100%" stop-color="#C4A882" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0 80 C30 76,50 68,75 60 S110 48,140 40 S185 28,210 20 S265 10,295 7 L320 6 L320 90 L0 90 Z" fill="url(#chartFill)"/>
+                  <path d="M0 80 C30 76,50 68,75 60 S110 48,140 40 S185 28,210 20 S265 10,295 7 L320 6" fill="none" stroke="#C4A882" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="dash-stats">
+                <div class="dash-stat">
+                  <span class="mono-tag">заявки</span>
+                  <strong>1 482</strong>
+                </div>
+                <div class="dash-stat">
+                  <span class="mono-tag">рост / мес</span>
+                  <strong class="accent-text">+23%</strong>
+                </div>
+                <div class="dash-stat">
+                  <span class="mono-tag">экономия</span>
+                  <strong>120 ч</strong>
+                </div>
               </div>
             </div>
-          </article>
-          <article class="metric-chip metric-chip--one">
-            <p>Экономия времени</p>
-            <strong>120+ ч/мес</strong>
-          </article>
-          <article class="metric-chip metric-chip--two">
-            <p>Интеграция</p>
-            <strong>CRM + Боты + Сайт</strong>
-          </article>
-        </div>
-        <div class="hero__actions">
-          <a class="btn btn--primary hero__cta" href="#contacts">Обсудить проект</a>
+          </div>
+
+          <div class="float-chip float-chip--tl">
+            <span class="float-chip__dot"></span>
+            <span class="mono-tag">AI-агент запущен</span>
+          </div>
+          <div class="float-chip float-chip--br">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="#C4A882" stroke-width="2"/><path d="M8 12l3 3 5-5" stroke="#C4A882" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span class="mono-tag">CRM интегрирована</span>
+          </div>
         </div>
       </div>
     </header>
 
     <main id="main-content">
+
       <section class="section" id="services">
-        <div class="container value-section">
-          <p class="badge value-section__badge">Чем я могу быть полезна</p>
-          <h2>Простые решения для вашего бизнеса</h2>
-          <p class="value-section__subtitle">
-            Помогаю автоматизировать процессы, чтобы вы тратили меньше времени
-            на рутину и больше — на развитие бизнеса
-          </p>
-          <div class="value-section__ghost" aria-hidden="true"></div>
-          <div class="grid grid--2 value-cards">
-            <article class="card value-card">
-              <div class="value-card__icon" aria-hidden="true">⚙</div>
-              <h3>Автоматизирую рутину</h3>
-              <p>
-                Настраиваю процессы так, чтобы меньше делать вручную и экономить
-                время каждый день
-              </p>
-            </article>
-            <article class="card value-card">
-              <div class="value-card__icon" aria-hidden="true">⌘</div>
-              <h3>Делаю сайты и сервисы</h3>
-              <p>
-                Создаю удобные сайты и инструменты, которые помогают привлекать
-                клиентов и работать проще
-              </p>
-            </article>
-            <article class="card value-card">
-              <div class="value-card__icon" aria-hidden="true">◈</div>
-              <h3>Соединяю всё в одну систему</h3>
-              <p>
-                Объединяю CRM, таблицы, боты и сервисы, чтобы всё работало
-                вместе без путаницы
-              </p>
-            </article>
-            <article class="card value-card">
-              <div class="value-card__icon" aria-hidden="true">↗</div>
-              <h3>Помогаю расти</h3>
-              <p>
-                Упрощаю процессы, чтобы вы работали быстрее, тратили меньше и
-                зарабатывали больше
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section examples-section" id="projects">
         <div class="container">
-          <h2>Примеры решений, которые я разрабатываю</h2>
-          <p class="examples-section__subtitle">
-            Здесь собраны реальные проекты и примеры решений, которые можно доработать и настроить под конкретные бизнес-задачи
-          </p>
-          <div class="examples-grid">
-            <article class="example-card">
-              <div class="example-card__top">
-                <span class="example-card__badge">Web App</span>
-                <span class="example-card__icon" aria-hidden="true">◔</span>
-              </div>
-              <h3>Сайт для фэшн мероприятия</h3>
-              <p>Информация о мероприятии с возможностью купить билет на сайте</p>
-              <a
-                class="example-card__cta"
-                href="https://elistafashionshow.ru/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Посмотреть проект →</a
-              >
+          <div class="section-head">
+            <p class="mono-tag">Чем я могу помочь</p>
+            <h2>Цифровые инструменты,<br />которые работают на вас</h2>
+            <p class="section-sub">Беру рутинные задачи на автоматизацию — вы фокусируетесь на развитии</p>
+          </div>
+          <div class="services-grid">
+            <article class="svc-card svc-card--dark svc-card--wide">
+              <p class="mono-tag">01 — Автоматизация</p>
+              <h3>Боты и AI-агенты</h3>
+              <p>Настраиваю боты и AI-агенты, которые заменяют ручной труд — от обработки заявок до общения с клиентами 24/7</p>
+              <ul class="svc-list">
+                <li>Боты в Telegram и WhatsApp</li>
+                <li>AI-агенты под задачи бизнеса</li>
+                <li>Автоматическая обработка заявок</li>
+              </ul>
             </article>
-            <article class="example-card example-card--featured">
-              <div class="example-card__top">
-                <span class="example-card__badge">Automation</span>
-                <span class="example-card__icon" aria-hidden="true">◍</span>
-              </div>
-              <h3>WMS-система для склада</h3>
-              <p>Система для учёта товаров и управления складскими процессами</p>
-              <a
-                class="example-card__cta"
-                href="https://gvbaydaeva-lang.github.io/ffmsk-launchpad/dashboard"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Посмотреть проект →</a
-              >
+            <article class="svc-card">
+              <p class="mono-tag">02 — Разработка</p>
+              <h3>Сайты и веб-приложения</h3>
+              <p>Конверсионные лендинги, корпоративные сайты и веб-сервисы под бизнес-задачи</p>
             </article>
-            <article class="example-card">
-              <div class="example-card__top">
-                <span class="example-card__badge">Website</span>
-                <span class="example-card__icon" aria-hidden="true">◒</span>
-              </div>
-              <h3>Сайт для куратора онлайн платформы</h3>
-              <p>Сайт про удаленную работу, с возможностью оплатить тарифы или обратиться напрямую в мессенджеры</p>
-              <a
-                class="example-card__cta"
-                href="http://anastasiya-slautina08.ru/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Посмотреть проект →</a
-              >
+            <article class="svc-card">
+              <p class="mono-tag">03 — Интеграции</p>
+              <h3>CRM и связка сервисов</h3>
+              <p>Объединяю CRM, таблицы, боты и сервисы в единую систему без потери данных</p>
             </article>
-            <article class="example-card">
-              <div class="example-card__top">
-                <span class="example-card__badge">Corporate</span>
-                <span class="example-card__icon" aria-hidden="true">◉</span>
-              </div>
-              <h3>Сайт для строительной компании</h3>
-              <p>Презентационный сайт с описанием услуг и проектов</p>
-              <a
-                class="example-card__cta"
-                href="https://gvbaydaeva-lang.github.io/Velion-House/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Посмотреть проект →</a
-              >
-            </article>
-            <article class="example-card">
-              <div class="example-card__top">
-                <span class="example-card__badge">CRM Tool</span>
-                <span class="example-card__icon" aria-hidden="true">◎</span>
-              </div>
-              <h3>Веб-приложение для магазина парфюмерии</h3>
-              <p>Инструмент для работы с заказами и покупателями</p>
-              <a
-                class="example-card__cta"
-                href="https://gvbaydaeva-lang.github.io/parfum-mobil/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Посмотреть проект →</a
-              >
+            <article class="svc-card svc-card--accent">
+              <p class="mono-tag">04 — AI</p>
+              <h3>AI-сервисы под ключ</h3>
+              <p>Кастомные AI-инструменты: от генерации контента до анализа данных и принятия решений</p>
             </article>
           </div>
-          <p class="examples-note">
-            Каждый проект разрабатывается под задачи бизнеса и может быть
-            адаптирован под ваши процессы
-          </p>
         </div>
       </section>
 
-      <section class="section about-modern" id="about">
-        <div class="container about-modern__content">
-          <div class="about-modern__text">
-            <h2>Обо мне</h2>
-            <p>
-              Меня зовут Гиляна. Я создаю автоматизацию для бизнеса: сайты, боты, CRM, сервисы и
-              интеграции. Помогаю упростить процессы и убрать рутину, чтобы
-              бизнес работал быстрее и понятнее.
-            </p>
-            <p>
-              Использую современный подход к разработке с ИИ с помощью
-              vibe-кодинга. Это позволяет быстрее создавать и дорабатывать
-              решения прямо в процессе, адаптируя их под реальные задачи.
-            </p>
-            <ul class="about-modern__list">
-              <li>Кастомные решения под задачи бизнеса</li>
-              <li>Быстрая разработка и доработка</li>
-              <li>Упрощение процессов и экономия времени</li>
-              <li>Интеграции и автоматизация “под ключ”</li>
-            </ul>
+      <section class="section projects-section" id="projects">
+        <div class="container">
+          <div class="section-head">
+            <p class="mono-tag">Портфолио</p>
+            <h2>Примеры решений</h2>
+            <p class="section-sub">Реальные проекты, которые можно адаптировать под ваши задачи</p>
           </div>
-          <div class="about-modern__media">
-            <img
-              src="new-project.png"
-              alt="Байдаева Гиляна — портрет"
-              width="1080"
-              height="1080"
-              loading="lazy"
-              decoding="async"
-            />
+          <div class="projects-grid">
+            <article class="proj-card proj-card--featured">
+              <div class="os-window os-window--sm">
+                <div class="os-window__chrome">
+                  <span class="os-dot os-dot--red"></span>
+                  <span class="os-dot os-dot--yellow"></span>
+                  <span class="os-dot os-dot--green"></span>
+                  <span class="os-window__title">wms.system</span>
+                </div>
+                <div class="os-window__body os-window__body--preview">
+                  <div class="preview-row"><span class="preview-tag">Приёмка</span><span class="preview-bar preview-bar--80"></span></div>
+                  <div class="preview-row"><span class="preview-tag">Отгрузка</span><span class="preview-bar preview-bar--60"></span></div>
+                  <div class="preview-row"><span class="preview-tag">Остаток</span><span class="preview-bar preview-bar--45"></span></div>
+                </div>
+              </div>
+              <div class="proj-card__info">
+                <span class="proj-tag">Automation</span>
+                <h3>WMS-система для склада</h3>
+                <p>Полная автоматизация учёта товаров и управления складскими процессами</p>
+                <a class="proj-link" href="https://gvbaydaeva-lang.github.io/ffmsk-launchpad/dashboard" target="_blank" rel="noopener noreferrer">Посмотреть проект →</a>
+              </div>
+            </article>
+
+            <article class="proj-card">
+              <div class="proj-card__top">
+                <span class="proj-tag">Web App</span>
+              </div>
+              <h3>Сайт для фэшн-мероприятия</h3>
+              <p>Информация о мероприятии с покупкой билетов онлайн</p>
+              <a class="proj-link" href="https://elistafashionshow.ru/" target="_blank" rel="noopener noreferrer">Посмотреть →</a>
+            </article>
+
+            <article class="proj-card">
+              <div class="proj-card__top">
+                <span class="proj-tag">Website</span>
+              </div>
+              <h3>Сайт для куратора онлайн-платформы</h3>
+              <p>Оплата тарифов и прямой выход в мессенджеры</p>
+              <a class="proj-link" href="http://anastasiya-slautina08.ru/" target="_blank" rel="noopener noreferrer">Посмотреть →</a>
+            </article>
+
+            <article class="proj-card">
+              <div class="proj-card__top">
+                <span class="proj-tag">Corporate</span>
+              </div>
+              <h3>Сайт строительной компании</h3>
+              <p>Презентационный сайт с услугами и проектами</p>
+              <a class="proj-link" href="https://gvbaydaeva-lang.github.io/Velion-House/" target="_blank" rel="noopener noreferrer">Посмотреть →</a>
+            </article>
+
+            <article class="proj-card">
+              <div class="proj-card__top">
+                <span class="proj-tag">CRM Tool</span>
+              </div>
+              <h3>Веб-приложение для парфюмерного магазина</h3>
+              <p>Инструмент для работы с заказами и покупателями</p>
+              <a class="proj-link" href="https://gvbaydaeva-lang.github.io/parfum-mobil/" target="_blank" rel="noopener noreferrer">Посмотреть →</a>
+            </article>
+          </div>
+          <p class="projects-note mono-tag">Каждый проект адаптируется под конкретные бизнес-задачи</p>
+        </div>
+      </section>
+
+      <section class="section about-section" id="about">
+        <div class="container about-section__layout">
+          <div class="about-section__media">
+            <div class="about-portrait-wrap">
+              <img
+                src="about-portrait.png"
+                alt="Байдаева Гиляна — AI-разработчик"
+                width="480"
+                height="600"
+                loading="lazy"
+                decoding="async"
+                class="about-portrait"
+              />
+            </div>
+          </div>
+          <div class="about-section__copy">
+            <p class="mono-tag">Обо мне</p>
+            <h2>Привет, я Гиляна</h2>
+            <p>Создаю цифровые продукты для бизнеса: сайты, боты, AI-агенты, CRM-интеграции и автоматизации. Помогаю убрать рутину, чтобы вы занимались тем, что важно.</p>
+            <p>Использую подход vibe-кодинга с ИИ — это позволяет создавать и дорабатывать решения быстрее, адаптируя их под реальные задачи прямо в процессе работы.</p>
+            <ul class="about-list">
+              <li>Кастомные решения под задачи бизнеса</li>
+              <li>Быстрая разработка и итерации</li>
+              <li>AI-инструменты и автоматизация «под ключ»</li>
+              <li>Интеграции без потери данных</li>
+            </ul>
+            <a class="btn btn--dark btn--lg" href="#contacts">Обсудить проект</a>
           </div>
         </div>
       </section>
+
     </main>
 
-    <section class="section contacts" id="contacts">
-      <div class="container contacts__content">
-        <h2>Обсудим ваш проект</h2>
-        <p>
-          Выберите удобный способ связи — я отвечу лично
-        </p>
-        <div class="contacts__messengers">
-          <a
-            class="messenger-btn messenger-btn--primary messenger-btn--telegram"
-            href="https://t.me/gilyana_08"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg class="messenger-icon messenger-icon--telegram" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M21.5 4.5a1 1 0 0 0-1.03-.13L3.2 11.5a1 1 0 0 0 .08 1.87l4.72 1.67 1.66 4.7a1 1 0 0 0 1.85.1l7.2-17.3a1 1 0 0 0-.2-1.04ZM9.8 14.3l-.67 2-1.07-3-3-1.07 12.9-5.38-8.16 7.44Z"
-              />
-            </svg>
-            <span class="messenger-btn__label">Telegram</span>
+    <section class="section contacts-section" id="contacts">
+      <div class="container contacts-section__inner">
+        <div class="section-head section-head--center">
+          <p class="mono-tag">Связаться</p>
+          <h2>Обсудим ваш проект</h2>
+          <p class="section-sub">Выберите удобный способ — отвечаю лично</p>
+        </div>
+        <div class="messengers">
+          <a class="msg-btn msg-btn--tg" href="https://t.me/gilyana_08" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+            <svg class="msg-icon" viewBox="0 0 24 24"><path d="M21.5 4.5a1 1 0 0 0-1.03-.13L3.2 11.5a1 1 0 0 0 .08 1.87l4.72 1.67 1.66 4.7a1 1 0 0 0 1.85.1l7.2-17.3a1 1 0 0 0-.2-1.04ZM9.8 14.3l-.67 2-1.07-3-3-1.07 12.9-5.38-8.16 7.44Z"/></svg>
+            <span>Telegram</span>
           </a>
-          <a
-            class="messenger-btn messenger-btn--whatsapp"
-            href="https://wa.me/79859390988?text=Здравствуйте!%20Хочу%20узнать%20подробнее"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg class="messenger-icon messenger-icon--whatsapp" viewBox="0 0 24 24" aria-hidden="true">
-              <path
-                d="M19.1 4.9A9.9 9.9 0 0 0 3.5 17.2L2 22l4.95-1.44A9.9 9.9 0 1 0 19.1 4.9Zm-7.2 15.3c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-2.9.85.88-2.8-.2-.3a8.2 8.2 0 1 1 6.6 3.6Zm4.5-5.6c-.25-.12-1.48-.73-1.7-.81-.23-.08-.39-.12-.55.12-.17.25-.63.81-.77.98-.14.17-.28.19-.53.06-.25-.12-1.05-.39-2-1.25-.74-.66-1.24-1.47-1.38-1.72-.14-.24-.01-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.75-1.82-.2-.48-.4-.42-.55-.43h-.47c-.17 0-.43.06-.65.31-.22.24-.86.84-.86 2.04 0 1.2.88 2.37 1 2.53.12.17 1.72 2.62 4.16 3.67.58.25 1.03.4 1.38.5.58.19 1.1.16 1.52.1.46-.07 1.48-.6 1.69-1.18.2-.58.2-1.07.14-1.18-.05-.1-.2-.16-.44-.28Z"
-              />
-            </svg>
-            <span class="messenger-btn__label">WhatsApp</span>
+          <a class="msg-btn msg-btn--wa" href="https://wa.me/79859390988?text=Здравствуйте!%20Хочу%20узнать%20подробнее" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+            <svg class="msg-icon" viewBox="0 0 24 24"><path d="M19.1 4.9A9.9 9.9 0 0 0 3.5 17.2L2 22l4.95-1.44A9.9 9.9 0 1 0 19.1 4.9Zm-7.2 15.3c-1.5 0-2.9-.4-4.1-1.1l-.3-.2-2.9.85.88-2.8-.2-.3a8.2 8.2 0 1 1 6.6 3.6Zm4.5-5.6c-.25-.12-1.48-.73-1.7-.81-.23-.08-.39-.12-.55.12-.17.25-.63.81-.77.98-.14.17-.28.19-.53.06-.25-.12-1.05-.39-2-1.25-.74-.66-1.24-1.47-1.38-1.72-.14-.24-.01-.37.1-.49.1-.1.24-.28.36-.42.12-.14.16-.24.24-.4.08-.17.04-.31-.02-.43-.06-.12-.55-1.33-.75-1.82-.2-.48-.4-.42-.55-.43h-.47c-.17 0-.43.06-.65.31-.22.24-.86.84-.86 2.04 0 1.2.88 2.37 1 2.53.12.17 1.72 2.62 4.16 3.67.58.25 1.03.4 1.38.5.58.19 1.1.16 1.52.1.46-.07 1.48-.6 1.69-1.18.2-.58.2-1.07.14-1.18-.05-.1-.2-.16-.44-.28Z"/></svg>
+            <span>WhatsApp</span>
           </a>
-          <a
-            class="messenger-btn messenger-btn--instagram"
-            href="https://www.instagram.com/gilyana_pro?igsh=MWJtdWc0enlzb2F1Mw%3D%3D&utm_source=qr"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg class="messenger-icon messenger-icon--instagram" viewBox="0 0 24 24" aria-hidden="true">
-              <defs>
-                <linearGradient id="instagramGradient" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#f59e0b" />
-                  <stop offset="35%" stop-color="#f43f5e" />
-                  <stop offset="65%" stop-color="#d946ef" />
-                  <stop offset="100%" stop-color="#8b5cf6" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm10.1 1.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z"
-              />
+          <a class="msg-btn msg-btn--ig" href="https://www.instagram.com/gilyana_pro?igsh=MWJtdWc0enlzb2F1Mw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg class="msg-icon" viewBox="0 0 24 24">
+              <defs><linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f59e0b"/><stop offset="50%" stop-color="#f43f5e"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient></defs>
+              <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 1.8A3.7 3.7 0 0 0 3.8 7.5v9a3.7 3.7 0 0 0 3.7 3.7h9a3.7 3.7 0 0 0 3.7-3.7v-9a3.7 3.7 0 0 0-3.7-3.7h-9Zm10.1 1.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 1.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z" fill="url(#igGrad)"/>
             </svg>
-            <span class="messenger-btn__label">Instagram</span>
+            <span>Instagram</span>
           </a>
-          <a
-            class="messenger-btn messenger-btn--max"
-            href="https://max.ru/u/f9LHodD0cOKqn3E3_uMmRRlRbF9OmFoEm6E1oABKsG7NoWCjABLeNpO6FIc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <svg class="messenger-icon messenger-icon--max" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 5h3.2L12 12.2 16.8 5H20l-6.4 9.6L20 19h-3.2L12 11.8 7.2 19H4l6.4-9.4L4 5Z" />
-            </svg>
-            <span class="messenger-btn__label">Max</span>
+          <a class="msg-btn msg-btn--mx" href="https://max.ru/u/f9LHodD0cOKqn3E3_uMmRRlRbF9OmFoEm6E1oABKsG7NoWCjABLeNpO6FIc" target="_blank" rel="noopener noreferrer" aria-label="Max">
+            <svg class="msg-icon" viewBox="0 0 24 24"><path d="M4 5h3.2L12 12.2 16.8 5H20l-6.4 9.6L20 19h-3.2L12 11.8 7.2 19H4l6.4-9.4L4 5Z" fill="currentColor"/></svg>
+            <span>Max</span>
           </a>
         </div>
       </div>
