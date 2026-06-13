@@ -415,3 +415,49 @@ if (painCounters.length) {
     }, 200);
   }
 })();
+
+/* ── Hero reveal on load ── */
+(function initHeroReveal() {
+  const els = [
+    { sel: '.hero__name', delay: 120 },
+    { sel: '.hero__lead', delay: 280 },
+    { sel: '.hero__sub',  delay: 420 },
+    { sel: '.hero__actions', delay: 560 }
+  ];
+
+  els.forEach(({ sel, delay }) => {
+    const el = document.querySelector(sel);
+    if (!el) return;
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(22px)';
+    el.style.transition = `opacity 0.7s ease, transform 0.7s ease`;
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, delay);
+  });
+})();
+
+/* ── Blur+scale card reveal on scroll ── */
+(function initCardReveal() {
+  const selectors = '.pain-card, .step-card, .case';
+  document.querySelectorAll(selectors).forEach((el, i) => {
+    el.style.opacity = '0';
+    el.style.transform = 'scale(0.96) translateY(12px)';
+    el.style.filter = 'blur(5px)';
+    el.style.transition = `opacity 0.55s ease ${i * 60}ms, transform 0.55s ease ${i * 60}ms, filter 0.55s ease ${i * 60}ms`;
+  });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      el.style.opacity = '1';
+      el.style.transform = 'scale(1) translateY(0)';
+      el.style.filter = 'blur(0px)';
+      obs.unobserve(el);
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.pain-card, .step-card, .case').forEach(el => obs.observe(el));
+})();
