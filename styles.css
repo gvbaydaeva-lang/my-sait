@@ -15,6 +15,11 @@
   --accent-ink:#3d352e;
   --white:    #FFFFFF;
   --cream:    #F0EBE3;
+  --coal:     #3d352e;
+  --coal-soft:#4a4139;
+  --gold:     #EF9F27;
+  --sand:     #F0EDE6;
+  --mono:     "JetBrains Mono", ui-monospace, monospace;
   --r:        16px;
   --r-lg:     24px;
   --font:     "Plus Jakarta Sans", system-ui, sans-serif;
@@ -349,12 +354,104 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   background: rgba(61, 53, 46, 0.06);
 }
 
+.hero__text {
+  padding-left: 5%;
+}
+
 /* ── Screens ── */
 .screen {
   padding: clamp(3.5rem, 12vw, 6.5rem) 0;
 }
 
 .screen--alt { background: var(--bg-alt); }
+
+.section--dark { background: var(--bg); }
+
+/* ── Pain ── */
+.pain__header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.pain__header .label { margin-bottom: 1rem; }
+
+.pain__lead {
+  margin-inline: auto;
+  max-width: 56ch;
+}
+
+.pain__cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin-bottom: 2rem;
+}
+
+.pain-card {
+  padding: 24px;
+  border-radius: 16px;
+  background: var(--coal-soft);
+  border: 1px solid rgba(240, 237, 230, 0.08);
+  border-left-width: 3px;
+  border-left-style: solid;
+}
+
+.pain-card--red { border-left-color: #E24B4A; }
+.pain-card--yellow { border-left-color: #EF9F27; }
+.pain-card--purple { border-left-color: #7F77DD; }
+
+.pain-card__icon {
+  display: block;
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.pain-card__title {
+  font-family: var(--display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.pain-card__text {
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  line-height: 1.65;
+}
+
+/* ── Pain counters ── */
+.pain-counters {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 2rem;
+}
+
+.pain-counter-card {
+  padding: 28px 24px;
+  border-radius: 16px;
+  background: rgba(240, 237, 230, 0.06);
+  border: 1px solid rgba(240, 237, 230, 0.12);
+}
+
+.pain-counter {
+  display: block;
+  font-family: var(--mono);
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #C4A882;
+}
+
+.pain-counter-card__label {
+  display: block;
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: rgba(240, 237, 230, 0.45);
+}
 
 /* ── Tags / Stack ── */
 .tags {
@@ -708,6 +805,14 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 
   .hero__name {
     margin-bottom: 0;
+  }
+
+  .pain__cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pain-counters {
+    grid-template-columns: repeat(4, 1fr);
   }
 
   .tags {

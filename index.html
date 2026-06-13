@@ -22,7 +22,7 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -32,7 +32,7 @@
       <div class="wrap nav__inner">
         <a class="nav__brand" href="#top">Г. Байдаева</a>
         <div class="nav__links">
-          <a href="#about">Обо мне</a>
+          <a href="#pain">Проблема</a>
           <a href="#services">Решения</a>
           <a href="#projects">Проекты</a>
           <a class="nav__cta" href="#contacts">Контакт</a>
@@ -42,7 +42,7 @@
         </button>
       </div>
       <div class="nav__mobile" id="mobile-menu" aria-hidden="true">
-        <a href="#about">Обо мне</a>
+        <a href="#pain">Проблема</a>
         <a href="#services">Решения</a>
         <a href="#projects">Проекты</a>
         <a href="#contacts">Контакт</a>
@@ -52,14 +52,14 @@
     <header class="hero" id="top" aria-label="Гиляна Байдаева в кафе">
       <div class="hero__overlay" aria-hidden="true"></div>
       <div class="wrap hero__inner">
-        <div class="hero__copy">
+        <div class="hero__copy hero__text">
           <div class="hero__top">
-            <p class="label">Digital · AI · Automation</p>
+            <p class="label">AI · Автоматизация · Цифровые продукты</p>
             <h1 class="hero__name">Гиляна Байдаева</h1>
           </div>
           <div class="hero__bottom">
-            <p class="hero__lead">Создаю цифровые экосистемы: сайты, AI-агенты, боты и умные CRM.</p>
-            <p class="hero__sub">Помогаю бизнесу автоматизировать рутину, внедрять искусственный интеллект и расти в продажах без раздувания штата. Быстро, гибко, на стыке маркетинга и современных AI-технологий.</p>
+            <p class="hero__lead">Забираю рутину. ИИ делает остальное — вместо вас</p>
+            <p class="hero__sub">Делаю сайты, боты, веб-приложения и автоматизации, которые работают сами. Вы видите цифры, управляете бизнесом — а не тонете в переписке и операционке.</p>
             <div class="hero__actions">
               <a class="btn btn--fill" href="#contacts">Обсудить проект</a>
               <a class="btn btn--ghost" href="#projects">Смотреть кейсы</a>
@@ -71,24 +71,48 @@
 
     <main id="main-content">
 
-      <section class="screen" id="about">
-        <div class="wrap">
-          <p class="label">Обо мне · Стек</p>
-          <h2 class="display">Код и AI — только там, где они решают задачу бизнеса</h2>
-          <p class="lead">Собираю работающие цифровые экосистемы под ключ: от идеи и архитектуры до запуска и интеграций. Без лишних слоёв — только то, что приносит результат.</p>
+      <section class="screen section--dark" id="pain">
+        <div class="wrap pain">
+          <header class="pain__header">
+            <p class="label">Узнаёте себя?</p>
+            <h2 class="display">Работаете много. Но бизнес всё равно держится на вас лично</h2>
+            <p class="lead pain__lead">Не потому что плохой продукт. А потому что процессы разрозненны, клиенты теряются в переписке, а цифры — нигде не сходятся</p>
+          </header>
 
-          <div class="tags">
-            <article class="tag-card">
-              <h3>AI &amp; Automation</h3>
-              <p>AI-агенты, чат-боты, интеграции с amoCRM, Bitrix и другими сервисами.</p>
+          <div class="pain__cards">
+            <article class="pain-card pain-card--red">
+              <span class="pain-card__icon" aria-hidden="true">💬</span>
+              <h3 class="pain-card__title">Тонете в соцсетях и мессенджерах</h3>
+              <p class="pain-card__text">Тонете в соцсетях и мессенджерах — директ, Telegram, WhatsApp, комментарии всё одновременно, всё вручную</p>
             </article>
-            <article class="tag-card">
-              <h3>Разработка</h3>
-              <p>Веб-сайты, мобильные интерфейсы, QR-системы и продуктовые веб-приложения.</p>
+            <article class="pain-card pain-card--yellow">
+              <span class="pain-card__icon" aria-hidden="true">⚙️</span>
+              <h3 class="pain-card__title">Путаетесь в переписках, теряете заявки</h3>
+              <p class="pain-card__text">Путаетесь в переписках, теряете заявки. Клиент написал — не увидели. Утром уже купил у другого</p>
             </article>
-            <article class="tag-card">
-              <h3>Инструменты</h3>
-              <p>Интеграции по API — Dikidi и др., кастомные сервисы, аналитика, дашборды.</p>
+            <article class="pain-card pain-card--purple">
+              <span class="pain-card__icon" aria-hidden="true">📊</span>
+              <h3 class="pain-card__title">Прайсы, напоминания, одни и те же вопросы</h3>
+              <p class="pain-card__text">Прайсы, напоминания, одни и те же вопросы по кругу — каждый день одно и то же, руками</p>
+            </article>
+          </div>
+
+          <div class="pain-counters">
+            <article class="pain-counter-card">
+              <span class="pain-counter" data-target="1482" data-prefix="" data-suffix="">0</span>
+              <span class="pain-counter-card__label">заявки </span>
+            </article>
+            <article class="pain-counter-card">
+              <span class="pain-counter" data-target="23" data-prefix="+" data-suffix="%">0</span>
+              <span class="pain-counter-card__label">конверсия </span>
+            </article>
+            <article class="pain-counter-card">
+              <span class="pain-counter" data-target="80" data-prefix="−" data-suffix="%">0</span>
+              <span class="pain-counter-card__label">автоматизации</span>
+            </article>
+            <article class="pain-counter-card">
+              <span class="pain-counter" data-target="0" data-prefix="→ " data-suffix=" ч">0</span>
+              <span class="pain-counter-card__label">рутины</span>
             </article>
           </div>
         </div>
