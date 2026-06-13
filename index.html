@@ -23,6 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -118,27 +119,119 @@
         </div>
       </section>
 
-      <section class="screen screen--alt" id="services">
-        <div class="wrap">
-          <p class="label">Что я делаю</p>
-          <h2 class="display">Решения под вашу экосистему</h2>
+      <section class="screen" id="services">
+        <div class="container">
+          <header class="section-head">
+            <p class="label">Что я делаю</p>
+            <h2 class="display">Инструменты, которые работают без вас</h2>
+            <p class="lead section-sub">Не шаблоны — каждое решение под вашу задачу. Быстро, потому что использую ИИ в разработке</p>
+          </header>
 
-          <div class="cards">
-            <article class="card">
-              <span class="card__num">01</span>
-              <h3>Автоматизация &amp; CRM</h3>
-              <p>Настройка систем учёта, интеграция API для сферы услуг, фитнеса, бьюти и складов.</p>
-            </article>
-            <article class="card">
-              <span class="card__num">02</span>
-              <h3>Умные сайты &amp; лендинги</h3>
-              <p>Мобильные интерфейсы, маркетплейсы, интерактивные лид-магниты и калькуляторы.</p>
-            </article>
-            <article class="card">
-              <span class="card__num">03</span>
-              <h3>AI-решения</h3>
-              <p>Внедрение ИИ-ассистентов в продажи, поддержку и внутренние процессы команды.</p>
-            </article>
+          <div class="srv-track-outer">
+            <div class="srv-track" id="srv-track">
+              <article class="svc-card svc-card--gold">
+                <div class="svc-card__top">
+                  <span class="svc-card__bg-txt">SEO</span>
+                  <i class="ti ti-world svc-card__icon" aria-hidden="true"></i>
+                  <span class="svc-card__pop">★ топ</span>
+                  <span class="svc-card__tag">web · seo</span>
+                </div>
+                <div class="svc-card__body">
+                  <h3 class="svc-card__name">Сайты и лендинги</h3>
+                  <p class="svc-card__sub">Продающие страницы с SEO в базе — видны в Google и Яндекс</p>
+                  <ul class="svc-card__list">
+                    <li>Разработка с нуля или редизайн</li>
+                    <li>Адаптация под мобильные</li>
+                    <li>Подключение форм и мессенджеров</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="svc-card svc-card--indigo">
+                <div class="svc-card__top">
+                  <span class="svc-card__bg-txt">AI</span>
+                  <i class="ti ti-robot svc-card__icon" aria-hidden="true"></i>
+                  <span class="svc-card__tag">GPT · bot</span>
+                </div>
+                <div class="svc-card__body">
+                  <h3 class="svc-card__name">Telegram-боты и AI-агенты</h3>
+                  <p class="svc-card__sub">Отвечают на вопросы и принимают заявки — без выходных</p>
+                  <ul class="svc-card__list">
+                    <li>Ответы на типовые вопросы</li>
+                    <li>Приём заявок и записей</li>
+                    <li>AI-консультант на базе GPT</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="svc-card svc-card--teal">
+                <div class="svc-card__top">
+                  <span class="svc-card__bg-txt">APP</span>
+                  <i class="ti ti-layout-grid svc-card__icon" aria-hidden="true"></i>
+                  <span class="svc-card__tag">app · ux</span>
+                </div>
+                <div class="svc-card__body">
+                  <h3 class="svc-card__name">Веб-приложения и каталоги</h3>
+                  <p class="svc-card__sub">Каталог с корзиной — клиент оформляет заказ сам</p>
+                  <ul class="svc-card__list">
+                    <li>Товары по категориям</li>
+                    <li>Карточки с фото и ценой</li>
+                    <li>Корзина и оформление заказа</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="svc-card svc-card--blue">
+                <div class="svc-card__top">
+                  <span class="svc-card__bg-txt">CRM</span>
+                  <i class="ti ti-chart-bar svc-card__icon" aria-hidden="true"></i>
+                  <span class="svc-card__tag">crm · db</span>
+                </div>
+                <div class="svc-card__body">
+                  <h3 class="svc-card__name">CRM и системы учёта</h3>
+                  <p class="svc-card__sub">Клиенты, сделки и статусы — ничего не теряется</p>
+                  <ul class="svc-card__list">
+                    <li>Учёт заявок и клиентов</li>
+                    <li>Воронка и статусы сделок</li>
+                    <li>Интеграция с мессенджерами</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="svc-card svc-card--rose">
+                <div class="svc-card__top">
+                  <span class="svc-card__bg-txt">→→</span>
+                  <i class="ti ti-git-branch svc-card__icon" aria-hidden="true"></i>
+                  <span class="svc-card__tag">make · n8n</span>
+                </div>
+                <div class="svc-card__body">
+                  <h3 class="svc-card__name">Интеграции и автоматизация</h3>
+                  <p class="svc-card__sub">Сервисы работают в одном потоке — без ручного копирования</p>
+                  <ul class="svc-card__list">
+                    <li>Make / n8n / Zapier</li>
+                    <li>Google Sheets как база данных</li>
+                    <li>Синхронизация между системами</li>
+                  </ul>
+                </div>
+              </article>
+
+              <article class="svc-card svc-card--amber">
+                <div class="svc-card__top">
+                  <span class="svc-card__bg-txt">AI+</span>
+                  <i class="ti ti-brain svc-card__icon" aria-hidden="true"></i>
+                  <span class="svc-card__tag">ai · llm</span>
+                </div>
+                <div class="svc-card__body">
+                  <h3 class="svc-card__name">AI-сервисы под задачу</h3>
+                  <p class="svc-card__sub">ИИ встроен в процессы — не отдельный продукт</p>
+                  <ul class="svc-card__list">
+                    <li>AI-чат на сайте или в боте</li>
+                    <li>Автогенерация контента</li>
+                    <li>Анализ данных и отчёты</li>
+                  </ul>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>

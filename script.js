@@ -183,3 +183,133 @@ if (painCounters.length) {
   }, { threshold: 0.3 });
   painCounters.forEach(el => obs.observe(el));
 }
+
+/* ── Services carousel ── */
+(function initServiceCarousel() {
+  const track = document.getElementById('srv-track');
+  if (!track) return;
+
+  let isDragging = false;
+  let isPaused = false;
+  let startX = 0;
+  let startScrollLeft = 0;
+  let velocity = 0;
+  let lastX = 0;
+  let lastTime = 0;
+  let dragRAF;
+
+  const AUTOSPEED = 0.4;
+
+  function autoScroll() {
+    if (!isPaused && !isDragging) {
+      track.scrollLeft += AUTOSPEED;
+      if (track.scrollLeft >= track.scrollWidth / 2) {
+        track.scrollLeft = 0;
+      }
+    }
+    requestAnimationFrame(autoScroll);
+  }
+
+  Array.from(track.children).forEach(el => {
+    track.appendChild(el.cloneNode(true));
+  });
+
+  track.style.overflowX = 'auto';
+  track.style.scrollbarWidth = 'none';
+  track.style.msOverflowStyle = 'none';
+  track.style.cursor = 'grab';
+  track.style.scrollBehavior = 'auto';
+
+  const style = document.createElement('style');
+  style.textContent = '#srv-track::-webkit-scrollbar { display: none; }';
+  document.head.appendChild(style);
+
+  track.addEventListener('mousedown', e => {
+    isDragging = true;
+    isPaused = true;
+    startX = e.pageX;
+    startScrollLeft = track.scrollLeft;
+    lastX = e.pageX;
+    lastTime = Date.now();
+    velocity = 0;
+    track.style.cursor = 'grabbing';
+    track.classList.add('is-paused');
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', e => {
+    if (!isDragging) return;
+    const dx = e.pageX - startX;
+    track.scrollLeft = startScrollLeft - dx;
+    velocity = (e.pageX - lastX) / (Date.now() - lastTime + 1);
+    lastX = e.pageX;
+    lastTime = Date.now();
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.cursor = 'grab';
+
+    let inertia = -velocity * 12;
+    function applyInertia() {
+      if (Math.abs(inertia) < 0.3) {
+        isPaused = false;
+        track.classList.remove('is-paused');
+        return;
+      }
+      track.scrollLeft += inertia;
+      inertia *= 0.92;
+      dragRAF = requestAnimationFrame(applyInertia);
+    }
+    applyInertia();
+  });
+
+  track.addEventListener('touchstart', e => {
+    isPaused = true;
+    isDragging = true;
+    startX = e.touches[0].pageX;
+    startScrollLeft = track.scrollLeft;
+    lastX = e.touches[0].pageX;
+    lastTime = Date.now();
+    velocity = 0;
+    track.classList.add('is-paused');
+  }, { passive: true });
+
+  track.addEventListener('touchmove', e => {
+    if (!isDragging) return;
+    const dx = e.touches[0].pageX - startX;
+    track.scrollLeft = startScrollLeft - dx;
+    velocity = (e.touches[0].pageX - lastX) / (Date.now() - lastTime + 1);
+    lastX = e.touches[0].pageX;
+    lastTime = Date.now();
+  }, { passive: true });
+
+  track.addEventListener('touchend', () => {
+    isDragging = false;
+    let inertia = -velocity * 10;
+    function applyInertia() {
+      if (Math.abs(inertia) < 0.3) {
+        isPaused = false;
+        track.classList.remove('is-paused');
+        return;
+      }
+      track.scrollLeft += inertia;
+      inertia *= 0.92;
+      requestAnimationFrame(applyInertia);
+    }
+    applyInertia();
+  });
+
+  track.addEventListener('click', () => {
+    if (Math.abs(velocity) > 0.1) return;
+    isPaused = true;
+    track.classList.add('is-paused');
+    setTimeout(() => {
+      isPaused = false;
+      track.classList.remove('is-paused');
+    }, 2000);
+  });
+
+  autoScroll();
+})();
