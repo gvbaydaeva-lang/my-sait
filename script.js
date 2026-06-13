@@ -374,3 +374,44 @@ if (painCounters.length) {
   }, { threshold: 0.5 });
   bars.forEach(b => { b.style.width = '0'; obs.observe(b); });
 })();
+
+/* ── Blur+scale card reveal ── */
+(function initCardReveal() {
+  const selectors = '.pain-card, .step-card, .case, .srv-pill';
+  document.querySelectorAll(selectors).forEach((el, i) => {
+    el.classList.add('reveal-card');
+    el.style.animationDelay = `${i * 60}ms`;
+  });
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-revealed');
+      obs.unobserve(entry.target);
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -4% 0px' });
+  document.querySelectorAll('.reveal-card').forEach(el => obs.observe(el));
+})();
+
+/* ── Hero name split reveal ── */
+(function initHeroReveal() {
+  const nameEl = document.querySelector('.hero__name');
+  const leadEl = document.querySelector('.hero__lead');
+  if (nameEl) {
+    nameEl.style.opacity = '0';
+    nameEl.style.transform = 'translateY(24px)';
+    nameEl.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    setTimeout(() => {
+      nameEl.style.opacity = '1';
+      nameEl.style.transform = 'translateY(0)';
+    }, 120);
+  }
+  if (leadEl) {
+    leadEl.style.opacity = '0';
+    leadEl.style.transform = 'translateY(18px)';
+    leadEl.style.transition = 'opacity 0.7s ease 0.25s, transform 0.7s ease 0.25s';
+    setTimeout(() => {
+      leadEl.style.opacity = '1';
+      leadEl.style.transform = 'translateY(0)';
+    }, 200);
+  }
+})();
