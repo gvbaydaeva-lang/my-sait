@@ -23,7 +23,7 @@
   --r:        16px;
   --r-lg:     24px;
   --font:     "Plus Jakarta Sans", system-ui, sans-serif;
-  --display:  "Space Grotesk", system-ui, sans-serif;
+  --display:  "Clash Display", "Space Grotesk", system-ui, sans-serif;
   --ease:     0.18s ease;
 }
 
@@ -257,18 +257,17 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   pointer-events: none;
   background:
     linear-gradient(
-      90deg,
-      rgba(245, 241, 235, 0.92) 0%,
-      rgba(245, 241, 235, 0.72) 18%,
-      rgba(245, 241, 235, 0.35) 32%,
-      rgba(245, 241, 235, 0.08) 42%,
-      transparent 50%
+      to top,
+      rgba(232, 228, 220, 0.98) 0%,
+      rgba(232, 228, 220, 0.92) 20%,
+      rgba(232, 228, 220, 0.6) 38%,
+      rgba(232, 228, 220, 0.1) 55%,
+      transparent 68%
     ),
     linear-gradient(
-      to top,
-      rgba(245, 241, 235, 0.85) 0%,
-      rgba(245, 241, 235, 0.45) 26%,
-      transparent 48%
+      90deg,
+      rgba(232, 228, 220, 0.5) 0%,
+      transparent 45%
     );
 }
 
@@ -289,7 +288,8 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   min-height: 100vh;
   min-height: 100dvh;
   padding-top: calc(56px + 1.5rem);
-  padding-bottom: 2rem;
+  padding-bottom: 4rem;
+  justify-content: flex-end;
 }
 
 .hero__copy {
@@ -304,35 +304,40 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 }
 
 .hero__copy .label {
-  color: #6B635A;
+  color: #1A1816;
   letter-spacing: 0.16em;
+  font-weight: 600;
 }
 
 .hero__name {
   font-family: var(--display);
   font-size: clamp(2.4rem, 10vw, 3.75rem);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1;
-  color: #1A1816;
+  color: #0E0C0B;
+  text-shadow: 0 1px 12px rgba(240,235,227,0.6);
 }
 
 .hero__lead {
   font-family: var(--display);
-  font-size: clamp(1.05rem, 3.5vw, 1.3rem);
-  font-weight: 600;
+  font-size: clamp(1.1rem, 3.5vw, 1.35rem);
+  font-weight: 700;
   line-height: 1.35;
   letter-spacing: -0.02em;
-  color: #2A2622;
+  color: #0E0C0B;
+  text-shadow: 0 1px 8px rgba(240,235,227,0.5);
   margin-bottom: 0.85rem;
 }
 
 .hero__sub {
-  font-size: 0.98rem;
-  color: #4A4540;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1A1816;
   line-height: 1.7;
   margin-bottom: 1.5rem;
   max-width: 38ch;
+  text-shadow: 0 1px 6px rgba(240,235,227,0.4);
 }
 
 .hero__actions {
