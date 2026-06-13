@@ -4,8 +4,8 @@
    ============================================================ */
 
 :root {
-  --bg:       #3d352e;
-  --bg-alt:   #342d27;
+  --bg:       #1C1917;
+  --bg-alt:   #22201E;
   --surface:  rgba(255, 255, 255, 0.04);
   --ink:      #F5F0E9;
   --ink-soft: #C9C0B6;
@@ -15,7 +15,7 @@
   --accent-ink:#3d352e;
   --white:    #FFFFFF;
   --cream:    #F0EBE3;
-  --coal:     #3d352e;
+  --coal:     #1C1917;
   --coal-soft:#4a4139;
   --gold:     #EF9F27;
   --sand:     #F0EDE6;
@@ -1390,6 +1390,266 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 
   .browser__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── How it works ── */
+#how-it-works {
+  padding: clamp(3.5rem, 12vw, 5.5rem) 0;
+  --line-dark: rgba(240, 237, 230, 0.14);
+  --text-light: #F0EDE6;
+  --text-light-soft: rgba(240, 237, 230, 0.72);
+  --gold: #C4A882;
+  --coal-soft: #2A2623;
+  --r-sm: 12px;
+}
+
+#how-it-works .container {
+  width: min(1140px, calc(100% - 2.5rem));
+  margin: 0 auto;
+}
+
+#how-it-works .eyebrow {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+#how-it-works .eyebrow--light {
+  color: rgba(240, 237, 230, 0.5);
+}
+
+.mono {
+  font-family: var(--mono);
+}
+
+/* HOW IT WORKS */
+.hiw-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.hiw-title {
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 700;
+  color: #F0EDE6;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.hiw-title--accent {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.hiw-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(240, 237, 230, 0.2);
+  color: rgba(240, 237, 230, 0.5);
+  font-size: 0.78rem;
+  white-space: nowrap;
+  margin-top: 6px;
+}
+
+.hiw-divider {
+  display: none;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0;
+  border-top: none;
+  padding-top: 36px;
+  margin-bottom: 28px;
+}
+
+.step-card {
+  padding: 20px 24px 0 0;
+  border: none;
+  background: none;
+  border-top: 2px solid var(--gold);
+}
+
+.step-card:first-child {
+  padding-left: 0;
+}
+
+.step-num {
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: block;
+  font-family: var(--mono);
+  border-top: none;
+  padding-top: 0;
+  width: auto;
+}
+
+.step-card h3 {
+  color: var(--text-light);
+  font-size: 1rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.step-card p {
+  color: rgba(240, 237, 230, 0.55);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin-bottom: 14px;
+}
+
+.step-meta {
+  font-size: 0.74rem;
+  color: var(--gold);
+  opacity: 0.65;
+  font-family: var(--mono);
+}
+
+/* SUBSIDY */
+.subsidy-card {
+  display: grid;
+  grid-template-columns: 180px 1fr auto;
+  gap: 28px;
+  align-items: center;
+  padding: 28px 32px;
+  border-radius: var(--r);
+  background: rgba(240, 237, 230, 0.04);
+  border: 1px solid rgba(240, 237, 230, 0.08);
+}
+
+.subsidy-percent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(196, 168, 130, 0.1);
+  border: 1px solid rgba(196, 168, 130, 0.2);
+  border-radius: var(--r-sm);
+  padding: 20px;
+  text-align: center;
+  height: 100%;
+}
+
+.subsidy-percent strong {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.subsidy-percent span {
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  color: rgba(240, 237, 230, 0.4);
+  text-transform: uppercase;
+  font-family: var(--mono);
+}
+
+.subsidy-text h3 {
+  color: var(--text-light);
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.subsidy-text p {
+  color: rgba(240, 237, 230, 0.55);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.subsidy-text strong {
+  color: var(--text-light);
+}
+
+.subsidy-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 200px;
+}
+
+.subsidy-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.subsidy-bar-row > span:first-child {
+  font-size: 0.65rem;
+  letter-spacing: 0.07em;
+  color: rgba(240, 237, 230, 0.45);
+  font-family: var(--mono);
+  min-width: 90px;
+}
+
+.subsidy-bar-row > span:last-child {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-light);
+  font-family: var(--mono);
+  min-width: 36px;
+  text-align: right;
+}
+
+.subsidy-bar-track {
+  flex: 1;
+  height: 5px;
+  background: rgba(240, 237, 230, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.subsidy-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.subsidy-bar-fill--state {
+  background: var(--gold);
+}
+
+.subsidy-bar-fill--you {
+  background: rgba(240, 237, 230, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .subsidy-card {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hiw-header {
+    flex-direction: column;
+    gap: 12px;
   }
 }
 

@@ -313,3 +313,64 @@ if (painCounters.length) {
 
   autoScroll();
 })();
+
+/* ── 3D tilt on cards ── */
+(function initTilt() {
+  const TILT_MAX = 8;
+  if (!window.matchMedia('(hover: hover)').matches) return;
+  document.querySelectorAll('.service-card, .example-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      el.style.transition = 'transform 0.08s ease, box-shadow 0.08s ease';
+    });
+    el.addEventListener('mousemove', e => {
+      const rect = el.getBoundingClientRect();
+      const rx = ((e.clientY - rect.top) / rect.height - 0.5) * -TILT_MAX * 2;
+      const ry = ((e.clientX - rect.left) / rect.width - 0.5) * TILT_MAX * 2;
+      el.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.02)`;
+    });
+    el.addEventListener('mouseleave', () => {
+      el.style.transition = 'transform 0.4s ease, box-shadow 0.26s ease';
+      el.style.transform = '';
+    });
+  });
+})();
+
+/* ── NumberTicker on step numbers ── */
+(function initNumberTicker() {
+  const els = document.querySelectorAll('.step-num');
+  if (!els.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.target, 10);
+      obs.unobserve(el);
+      let count = 0;
+      const tick = setInterval(() => {
+        count++;
+        el.textContent = count < 12
+          ? String(Math.floor(Math.random() * target) + 1).padStart(2, '0')
+          : String(target).padStart(2, '0');
+        if (count >= 12) clearInterval(tick);
+      }, 50);
+    });
+  }, { threshold: 0.4 });
+  els.forEach((el, i) => {
+    el.dataset.target = i + 1;
+    obs.observe(el);
+  });
+})();
+
+/* ── Subsidy bars animate on scroll ── */
+(function initSubsidyBars() {
+  const bars = document.querySelectorAll('.subsidy-bar-fill');
+  if (!bars.length) return;
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.style.width = entry.target.classList.contains('subsidy-bar-fill--state') ? '70%' : '30%';
+      obs.unobserve(entry.target);
+    });
+  }, { threshold: 0.5 });
+  bars.forEach(b => { b.style.width = '0'; obs.observe(b); });
+})();
