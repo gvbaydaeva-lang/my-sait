@@ -468,3 +468,36 @@ function toggle(btn) {
   document.querySelectorAll('.proj-item').forEach(i => i.classList.remove('open'));
   if (!wasOpen) item.classList.add('open');
 }
+
+/* ── FAQ accordion ── */
+document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-q');
+  const ans = item.querySelector('.faq-a');
+  const plus = item.querySelector('.faq-plus');
+  if (!btn || !ans) return;
+
+  btn.addEventListener('click', () => {
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+
+    document.querySelectorAll('.faq-item').forEach(other => {
+      const ob = other.querySelector('.faq-q');
+      const oa = other.querySelector('.faq-a');
+      const op = other.querySelector('.faq-plus');
+      if (ob && oa && other !== item) {
+        ob.setAttribute('aria-expanded', 'false');
+        oa.style.maxHeight = '0';
+        if (op) op.textContent = '+';
+      }
+    });
+
+    if (isOpen) {
+      btn.setAttribute('aria-expanded', 'false');
+      ans.style.maxHeight = '0';
+      if (plus) plus.textContent = '+';
+    } else {
+      btn.setAttribute('aria-expanded', 'true');
+      ans.style.maxHeight = ans.scrollHeight + 'px';
+      if (plus) plus.textContent = '−';
+    }
+  });
+});
