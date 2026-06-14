@@ -520,32 +520,135 @@
         </div>
       </section>
 
-      <section class="screen" id="projects">
-        <div class="wrap">
-          <p class="label">Проекты</p>
-          <h2 class="display">Кейсы</h2>
-          <p class="lead lead--narrow">Задача → что сделано → результат. Нажмите на карточку, чтобы открыть детали.</p>
-
-          <div class="cases">
-            <button type="button" class="case" data-project="fitness">
-              <span class="case__tag">Fitness · QR</span>
-              <h3>Система учёта для фитнес / модельной студии</h3>
-              <p>QR-коды, посещаемость, оплаты — всё в одном потоке.</p>
-              <span class="case__arrow" aria-hidden="true">→</span>
-            </button>
-            <button type="button" class="case" data-project="beauty">
-              <span class="case__tag">Beauty · API</span>
-              <h3>Аналитический дашборд для бьюти-бизнеса</h3>
-              <p>Интеграция с Dikidi API и наглядная аналитика.</p>
-              <span class="case__arrow" aria-hidden="true">→</span>
-            </button>
-            <button type="button" class="case" data-project="wms">
-              <span class="case__tag">WMS · Warehouse</span>
-              <h3>WMS-система для склада</h3>
-              <p>Автоматизация биллинга, FIFO и контроль остатков.</p>
-              <span class="case__arrow" aria-hidden="true">→</span>
-            </button>
+      <!-- ═══ PROJECTS ═══ -->
+      <section class="section" id="projects">
+        <div class="container">
+          <div class="projects-head">
+            <p class="eyebrow">Примеры решений</p>
+            <h2 class="display">Что можно сделать для вашего бизнеса</h2>
+            <p class="section-sub">Реальные проекты и прототипы — любой адаптируется под вашу задачу, в вашем стиле, с нужными функциями.</p>
           </div>
+
+          <div class="proj-accordion">
+
+            <div class="proj-item open">
+              <button type="button" class="proj-trigger" onclick="toggle(this)">
+                <span class="proj-num">01</span>
+                <span class="proj-tag">Web · Event</span>
+                <span class="proj-name">Сайт для фэшн-мероприятия</span>
+                <span class="proj-status proj-status--live">Работает</span>
+                <span class="proj-arrow">▾</span>
+              </button>
+              <div class="proj-body">
+                <div class="proj-inner">
+                  <div>
+                    <p class="proj-desc">Промо-сайт с программой события и встроенной оплатой билетов прямо на странице. Без редиректов — клиент покупает не выходя с сайта.</p>
+                    <div class="proj-pills">
+                      <span class="proj-pill">Landing</span>
+                      <span class="proj-pill">Оплата онлайн</span>
+                      <span class="proj-pill">Адаптив</span>
+                    </div>
+                  </div>
+                  <a class="proj-link" href="https://elistafashionshow.ru/" target="_blank">Смотреть сайт <span class="proj-link-arr">→</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-item">
+              <button type="button" class="proj-trigger" onclick="toggle(this)">
+                <span class="proj-num">02</span>
+                <span class="proj-tag">Web · Expert</span>
+                <span class="proj-name">Сайт куратора онлайн-платформы</span>
+                <span class="proj-status proj-status--live">Работает</span>
+                <span class="proj-arrow">▾</span>
+              </button>
+              <div class="proj-body">
+                <div class="proj-inner">
+                  <div>
+                    <p class="proj-desc">Личный сайт эксперта с тарифами, оплатой и прямыми ссылками на мессенджеры. Клиент выбирает тариф и сразу оплачивает или пишет напрямую.</p>
+                    <div class="proj-pills">
+                      <span class="proj-pill">Personal</span>
+                      <span class="proj-pill">Тарифы</span>
+                      <span class="proj-pill">Мессенджеры</span>
+                    </div>
+                  </div>
+                  <a class="proj-link" href="http://anastasiya-slautina08.ru/" target="_blank">Смотреть сайт <span class="proj-link-arr">→</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-item">
+              <button type="button" class="proj-trigger" onclick="toggle(this)">
+                <span class="proj-num">03</span>
+                <span class="proj-tag">WMS · Склад</span>
+                <span class="proj-name">WMS-система для склада</span>
+                <span class="proj-status proj-status--proto">Прототип</span>
+                <span class="proj-arrow">▾</span>
+              </button>
+              <div class="proj-body">
+                <div class="proj-inner">
+                  <div>
+                    <p class="proj-desc">Учёт остатков, FIFO и аналитика. Полная видимость склада: движение товара, категории, отчёты — в реальном времени.</p>
+                    <div class="proj-pills">
+                      <span class="proj-pill">Web App</span>
+                      <span class="proj-pill">Автоматизация</span>
+                      <span class="proj-pill">Аналитика</span>
+                    </div>
+                  </div>
+                  <a class="proj-link" href="https://gvbaydaeva-lang.github.io/ffmsk-launchpad/dashboard" target="_blank">Смотреть <span class="proj-link-arr">→</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-item">
+              <button type="button" class="proj-trigger" onclick="toggle(this)">
+                <span class="proj-num">04</span>
+                <span class="proj-tag">Corporate · SEO</span>
+                <span class="proj-name">Сайт строительной компании</span>
+                <span class="proj-status proj-status--proto">Прототип</span>
+                <span class="proj-arrow">▾</span>
+              </button>
+              <div class="proj-body">
+                <div class="proj-inner">
+                  <div>
+                    <p class="proj-desc">Корпоративный сайт с портфолио и формой заявки. SEO-разметка, адаптив, быстрая загрузка — готов к продвижению.</p>
+                    <div class="proj-pills">
+                      <span class="proj-pill">Corporate</span>
+                      <span class="proj-pill">Портфолио</span>
+                      <span class="proj-pill">SEO</span>
+                    </div>
+                  </div>
+                  <a class="proj-link" href="https://gvbaydaeva-lang.github.io/Velion-House/" target="_blank">Смотреть <span class="proj-link-arr">→</span></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="proj-item">
+              <button type="button" class="proj-trigger" onclick="toggle(this)">
+                <span class="proj-num">05</span>
+                <span class="proj-tag">CRM · Retail</span>
+                <span class="proj-name">CRM для парфюмерного магазина</span>
+                <span class="proj-status proj-status--proto">Прототип</span>
+                <span class="proj-arrow">▾</span>
+              </button>
+              <div class="proj-body">
+                <div class="proj-inner">
+                  <div>
+                    <p class="proj-desc">Заказы, покупатели и ассортимент — всё в одном интерфейсе. Без сторонних CRM-сервисов и абонентской платы.</p>
+                    <div class="proj-pills">
+                      <span class="proj-pill">CRM</span>
+                      <span class="proj-pill">Каталог</span>
+                      <span class="proj-pill">Заказы</span>
+                    </div>
+                  </div>
+                  <a class="proj-link" href="https://gvbaydaeva-lang.github.io/parfum-mobil/" target="_blank">Смотреть <span class="proj-link-arr">→</span></a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="projects-note">// Каждое решение разрабатывается под задачи конкретного бизнеса — это не шаблоны</p>
         </div>
       </section>
 

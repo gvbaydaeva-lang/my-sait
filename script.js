@@ -461,3 +461,10 @@ if (painCounters.length) {
 
   document.querySelectorAll('.pain-card, .step-card, .case').forEach(el => obs.observe(el));
 })();
+
+function toggle(btn) {
+  const item = btn.closest('.proj-item');
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.proj-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
