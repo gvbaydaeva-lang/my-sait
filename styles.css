@@ -373,6 +373,10 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   padding-left: 5%;
 }
 
+.hero__bg-wrapper {
+  display: none;
+}
+
 /* ── Screens ── */
 .screen {
   padding: clamp(3.5rem, 12vw, 6.5rem) 0;
@@ -1905,6 +1909,218 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 .modal__extra-links .btn {
   justify-content: flex-start;
   border-radius: var(--r);
+}
+
+.hero__btn-short {
+  display: none;
+}
+
+.hero__label-short {
+  display: none;
+}
+
+/* ── Hero mobile (full-screen portrait overlay) ── */
+@media (max-width: 700px) {
+  .nav {
+    display: none;
+  }
+
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    padding: 0;
+    overflow: hidden;
+    display: block;
+    background: var(--sand);
+    background-image: none;
+  }
+
+  .hero__overlay {
+    display: none;
+  }
+
+  .hero__bg-wrapper {
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__bg-wrapper canvas,
+  .hero__bg-wrapper img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 72% 34%;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60%;
+    background: radial-gradient(
+      ellipse 118% 102% at -2% 2%,
+      rgba(240, 237, 230, 0.98) 0%,
+      rgba(240, 237, 230, 0.94) 18%,
+      rgba(240, 237, 230, 0.86) 30%,
+      rgba(240, 237, 230, 0.72) 40%,
+      rgba(240, 237, 230, 0.52) 50%,
+      rgba(240, 237, 230, 0.28) 58%,
+      rgba(240, 237, 230, 0.10) 66%,
+      rgba(240, 237, 230, 0.03) 72%,
+      rgba(240, 237, 230, 0) 82%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 72%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      #000 0%,
+      #000 72%,
+      transparent 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 48%;
+    background: linear-gradient(
+      to top,
+      rgba(240, 237, 230, 0.95) 0%,
+      rgba(240, 237, 230, 0.65) 50%,
+      rgba(240, 237, 230, 0) 100%
+    );
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero__inner.wrap {
+    width: min(680px, calc(100% - 3rem));
+    max-width: none;
+    margin-inline: auto;
+    padding: 0;
+  }
+
+  .hero__layout {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100svh;
+    padding: calc(env(safe-area-inset-top, 0px) + 1.75rem) 0 2rem;
+  }
+
+  .hero__copy {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .hero__text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: transparent;
+    padding: 0;
+    text-align: left;
+  }
+
+  .hero__top {
+    max-width: 54%;
+  }
+
+  .hero__top .label {
+    margin-bottom: 12px;
+    font-family: var(--display);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #1A1816;
+    line-height: 1.45;
+  }
+
+  .hero__label-long {
+    display: block;
+  }
+
+  .hero__label-short {
+    display: none;
+  }
+
+  .hero__text h1,
+  .hero__name {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    margin-top: 0.15rem;
+    margin-bottom: 0;
+    color: #1A1816;
+    text-shadow: none;
+    max-width: none;
+    line-height: 1.05;
+  }
+
+  .hero__lead {
+    font-size: clamp(0.9rem, 3.5vw, 1.05rem);
+    font-weight: 600;
+    line-height: 1.35;
+    color: #1A1816;
+    margin: 0.75rem 0 0;
+    text-shadow: none;
+    max-width: 54%;
+  }
+
+  .hero__bottom {
+    margin-top: auto;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero__sub {
+    color: #1A1816;
+    font-size: 0.98rem;
+    line-height: 1.55;
+    margin: 0;
+    max-width: none;
+    text-shadow: none;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
+    width: 100%;
+  }
+
+  .hero__actions .btn--ghost {
+    display: none;
+  }
+
+  .hero__actions .btn,
+  .hero .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__window {
+    display: none;
+  }
 }
 
 /* ── Desktop ── */
