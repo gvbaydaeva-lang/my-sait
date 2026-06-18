@@ -6,13 +6,13 @@ const topbar = document.getElementById('topbar');
 const burger = document.querySelector('.nav__burger');
 const mobileMenu = document.getElementById('mobile-menu');
 
-/* ── Nav scroll tint ── */
+/* ── Transparent → sticky topbar on scroll ── */
 if (topbar) {
-  window.addEventListener('scroll', () => {
-    topbar.style.background = window.scrollY > 24
-      ? 'rgba(250, 250, 248, 0.96)'
-      : 'rgba(250, 250, 248, 0.88)';
-  }, { passive: true });
+  const onScroll = () => {
+    topbar.classList.toggle('is-scrolled', window.scrollY > 60);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
 
 /* ── Mobile menu ── */
@@ -198,11 +198,17 @@ if (painCounters.length) {
   let lastTime = 0;
   let dragRAF;
 
-  const AUTOSPEED = 0.4;
+  let startY = 0;
+  let touchAxis = null;
+  const mobileMQ = window.matchMedia('(max-width: 700px)');
+
+  function getAutoSpeed() {
+    return mobileMQ.matches ? 0.55 : 0.4;
+  }
 
   function autoScroll() {
     if (!isPaused && !isDragging) {
-      track.scrollLeft += AUTOSPEED;
+      track.scrollLeft += getAutoSpeed();
       if (track.scrollLeft >= track.scrollWidth / 2) {
         track.scrollLeft = 0;
       }
@@ -267,26 +273,53 @@ if (painCounters.length) {
 
   track.addEventListener('touchstart', e => {
     isPaused = true;
-    isDragging = true;
+    isDragging = false;
+    touchAxis = null;
     startX = e.touches[0].pageX;
+    startY = e.touches[0].pageY;
     startScrollLeft = track.scrollLeft;
     lastX = e.touches[0].pageX;
     lastTime = Date.now();
     velocity = 0;
-    track.classList.add('is-paused');
   }, { passive: true });
 
   track.addEventListener('touchmove', e => {
-    if (!isDragging) return;
-    const dx = e.touches[0].pageX - startX;
+    const x = e.touches[0].pageX;
+    const y = e.touches[0].pageY;
+    const dx = x - startX;
+    const dy = y - startY;
+
+    if (!touchAxis) {
+      if (Math.abs(dx) < 6 && Math.abs(dy) < 6) return;
+      touchAxis = Math.abs(dx) > Math.abs(dy) ? 'x' : 'y';
+    }
+
+    if (touchAxis === 'y') {
+      isPaused = false;
+      isDragging = false;
+      track.classList.remove('is-paused');
+      return;
+    }
+
+    isDragging = true;
+    track.classList.add('is-paused');
     track.scrollLeft = startScrollLeft - dx;
-    velocity = (e.touches[0].pageX - lastX) / (Date.now() - lastTime + 1);
-    lastX = e.touches[0].pageX;
+    velocity = (x - lastX) / (Date.now() - lastTime + 1);
+    lastX = x;
     lastTime = Date.now();
   }, { passive: true });
 
   track.addEventListener('touchend', () => {
+    if (touchAxis === 'y' || !isDragging) {
+      isPaused = false;
+      isDragging = false;
+      touchAxis = null;
+      track.classList.remove('is-paused');
+      return;
+    }
+
     isDragging = false;
+    touchAxis = null;
     let inertia = -velocity * 10;
     function applyInertia() {
       if (Math.abs(inertia) < 0.3) {
@@ -299,6 +332,13 @@ if (painCounters.length) {
       requestAnimationFrame(applyInertia);
     }
     applyInertia();
+  });
+
+  track.addEventListener('touchcancel', () => {
+    isPaused = false;
+    isDragging = false;
+    touchAxis = null;
+    track.classList.remove('is-paused');
   });
 
   track.addEventListener('click', () => {

@@ -19,6 +19,10 @@
   --coal-soft:#4a4139;
   --gold:     #EF9F27;
   --sand:     #F0EDE6;
+  --text-light: #F0EDE6;
+  --text-dark:  #1C1917;
+  --text-mid:   #6B6560;
+  --line-light: rgba(28, 25, 23, 0.08);
   --mono:     "JetBrains Mono", ui-monospace, monospace;
   --r:        16px;
   --r-lg:     24px;
@@ -125,15 +129,23 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 
 .lead--narrow { max-width: 42ch; margin-bottom: 2.5rem; }
 
-/* ── Nav ── */
+/* ── Nav / Topbar ── */
 .nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  background: rgba(61, 53, 46, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--line);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background .35s ease, border-color .35s ease;
+}
+
+.nav.is-scrolled {
+  background: rgba(240, 237, 230, 0.95);
+  backdrop-filter: blur(16px) saturate(1.3);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  border-bottom-color: var(--line-light);
 }
 
 .nav__inner {
@@ -149,7 +161,12 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   font-size: 0.95rem;
   text-decoration: none;
   letter-spacing: -0.02em;
-  color: var(--white);
+  color: var(--text-light);
+  transition: color .35s ease;
+}
+
+.nav.is-scrolled .nav__brand {
+  color: var(--text-dark);
 }
 
 .nav__links {
@@ -162,11 +179,21 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   text-decoration: none;
   font-size: 0.88rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.72);
-  transition: color var(--ease);
+  color: rgba(240, 237, 230, 0.85);
+  transition: color .2s;
 }
 
-.nav__links a:hover { color: var(--white); }
+.nav__links a:hover {
+  color: var(--text-light);
+}
+
+.nav.is-scrolled .nav__links a {
+  color: var(--text-mid);
+}
+
+.nav.is-scrolled .nav__links a:hover {
+  color: var(--text-dark);
+}
 
 .nav__cta {
   padding: 0.45rem 1rem !important;
@@ -190,9 +217,13 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 .nav__burger span {
   display: block;
   height: 2px;
-  background: var(--white);
+  background: rgba(240, 237, 230, 0.9);
   border-radius: 2px;
-  transition: transform var(--ease), opacity var(--ease);
+  transition: transform var(--ease), opacity var(--ease), background .35s ease;
+}
+
+.nav.is-scrolled .nav__burger span {
+  background: var(--text-mid);
 }
 
 .nav__burger.is-open span:first-child { transform: translateY(4px) rotate(45deg); }
@@ -266,6 +297,7 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   min-height: 100vh;
   min-height: 100dvh;
   display: flex;
+  padding-top: 64px;
   background-color: #e8e4df;
   background-image: url("ChatGPT Image 13 июн. 2026 г., 16_33_55.png");
   background-size: cover;
@@ -1411,6 +1443,60 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 }
 
 @media (max-width: 700px) {
+  html {
+    overflow-x: clip;
+  }
+
+  body {
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .wrap,
+  .container,
+  .webapp-pitch__inner,
+  #services .section-head {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .webapp-pitch__grid > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .browser {
+    max-width: 100%;
+  }
+
+  .browser__footer {
+    flex-wrap: wrap;
+    row-gap: 4px;
+  }
+
+  .srv-track {
+    padding-left: 16px;
+    padding-right: 16px;
+    touch-action: pan-y;
+  }
+
+  .srv-track-outer::before,
+  .srv-track-outer::after {
+    width: 48px;
+  }
+
+  .webapp-pitch__cta--desktop {
+    display: none !important;
+  }
+
+  .webapp-pitch__cta--mobile {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 1.25rem;
+  }
+
   #webapp-pitch {
     padding: 64px 0;
   }
@@ -1421,6 +1507,12 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 
   .browser__grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 701px) {
+  .webapp-pitch__cta--mobile {
+    display: none !important;
   }
 }
 
