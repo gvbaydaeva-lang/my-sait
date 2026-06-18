@@ -1476,9 +1476,22 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   }
 
   .srv-track {
+    overflow: hidden;
+    width: max-content;
     padding-left: 16px;
     padding-right: 16px;
     touch-action: pan-y;
+    animation: srv-marquee 48s linear infinite;
+    will-change: transform;
+  }
+
+  .srv-track.is-paused {
+    animation-play-state: paused;
+  }
+
+  @keyframes srv-marquee {
+    0% { transform: translate3d(0, 0, 0); }
+    100% { transform: translate3d(-50%, 0, 0); }
   }
 
   .srv-track-outer::before,
@@ -2136,7 +2149,7 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
     flex-direction: column;
     justify-content: space-between;
     min-height: 100svh;
-    padding: calc(env(safe-area-inset-top, 0px) + 1.75rem) 0 2rem;
+    padding: calc(env(safe-area-inset-top, 0px) + 2.75rem) 0 2rem;
   }
 
   .hero__copy {

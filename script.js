@@ -202,13 +202,9 @@ if (painCounters.length) {
   let touchAxis = null;
   const mobileMQ = window.matchMedia('(max-width: 700px)');
 
-  function getAutoSpeed() {
-    return mobileMQ.matches ? 0.55 : 0.4;
-  }
-
   function autoScroll() {
-    if (!isPaused && !isDragging) {
-      track.scrollLeft += getAutoSpeed();
+    if (!mobileMQ.matches && !isPaused && !isDragging) {
+      track.scrollLeft += 0.4;
       if (track.scrollLeft >= track.scrollWidth / 2) {
         track.scrollLeft = 0;
       }
@@ -220,11 +216,15 @@ if (painCounters.length) {
     track.appendChild(el.cloneNode(true));
   });
 
-  track.style.overflowX = 'auto';
-  track.style.scrollbarWidth = 'none';
-  track.style.msOverflowStyle = 'none';
-  track.style.cursor = 'grab';
-  track.style.scrollBehavior = 'auto';
+  if (mobileMQ.matches) {
+    track.style.overflowX = 'hidden';
+  } else {
+    track.style.overflowX = 'auto';
+    track.style.scrollbarWidth = 'none';
+    track.style.msOverflowStyle = 'none';
+    track.style.cursor = 'grab';
+    track.style.scrollBehavior = 'auto';
+  }
 
   const style = document.createElement('style');
   style.textContent = '#srv-track::-webkit-scrollbar { display: none; }';
@@ -272,6 +272,11 @@ if (painCounters.length) {
   });
 
   track.addEventListener('touchstart', e => {
+    if (mobileMQ.matches) {
+      track.classList.add('is-paused');
+      return;
+    }
+
     isPaused = true;
     isDragging = false;
     touchAxis = null;
@@ -284,6 +289,8 @@ if (painCounters.length) {
   }, { passive: true });
 
   track.addEventListener('touchmove', e => {
+    if (mobileMQ.matches) return;
+
     const x = e.touches[0].pageX;
     const y = e.touches[0].pageY;
     const dx = x - startX;
@@ -310,6 +317,11 @@ if (painCounters.length) {
   }, { passive: true });
 
   track.addEventListener('touchend', () => {
+    if (mobileMQ.matches) {
+      setTimeout(() => track.classList.remove('is-paused'), 1800);
+      return;
+    }
+
     if (touchAxis === 'y' || !isDragging) {
       isPaused = false;
       isDragging = false;
@@ -335,6 +347,11 @@ if (painCounters.length) {
   });
 
   track.addEventListener('touchcancel', () => {
+    if (mobileMQ.matches) {
+      track.classList.remove('is-paused');
+      return;
+    }
+
     isPaused = false;
     isDragging = false;
     touchAxis = null;
